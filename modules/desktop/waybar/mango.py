@@ -1,4 +1,4 @@
-"""Mango title stream and a confirmation-based Fuzzel power menu for Waybar."""
+"""Mango title/layout streams and a confirmation-based Fuzzel power menu for Waybar."""
 
 import json
 import subprocess
@@ -16,6 +16,23 @@ def window():
                 client = json.loads(line)
                 title = (client or {}).get("title", "")
                 print(json.dumps({"text": title, "class": "" if title else "empty"}), flush=True)
+            except (ValueError, AttributeError):
+                continue
+    finally:
+        process.terminate()
+        process.wait()
+
+
+def language():
+    process = subprocess.Popen(
+        ["mmsg", "watch", "keyboardlayout"], stdout=subprocess.PIPE, text=True
+    )
+    try:
+        for line in process.stdout:
+            try:
+                layout = json.loads(line).get("layout", "")
+                text = {"English (US)": "EN", "Russian": "RU"}.get(layout, layout)
+                print(json.dumps({"text": text, "tooltip": layout}), flush=True)
             except (ValueError, AttributeError):
                 continue
     finally:
@@ -44,4 +61,4 @@ def power():
 
 
 if __name__ == "__main__":
-    {"window": window, "power": power}[sys.argv[1]]()
+    {"window": window, "language": language, "power": power}[sys.argv[1]]()

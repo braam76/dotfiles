@@ -32,6 +32,7 @@ window#waybar > box {
 #memory,
 #custom-window,
 #tray,
+#custom-language,
 #wireplumber,
 #network,
 #bluetooth,
@@ -82,6 +83,7 @@ window#waybar > box {
 
 #cpu,
 #memory,
+#custom-language,
 #wireplumber {
     color: @accent;
 }

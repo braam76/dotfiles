@@ -6,7 +6,7 @@
     "spacing": 5,
     "modules-left": ["custom/launcher", "ext/workspaces", "cpu", "memory", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "wireplumber", "network", "backlight", "custom/platform-profile", "idle_inhibitor", "battery", "custom/power"],
+    "modules-right": ["tray", "custom/language", "wireplumber", "network", "backlight", "custom/platform-profile", "idle_inhibitor", "battery", "custom/power"],
 
     "custom/launcher": {
         "format": "",
@@ -40,6 +40,11 @@
     "tray": {
         "icon-size": 15,
         "spacing": 7
+    },
+    "custom/language": {
+        "exec": "python3 $HOME/.config/waybar/mango.py language",
+        "return-type": "json",
+        "restart-interval": 2
     },
     "wireplumber": {
         "format": "{volume}% {icon}",
