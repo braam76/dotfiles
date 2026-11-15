@@ -182,6 +182,7 @@ vim.lsp.enable({
   "rust_analyzer",
   "clangd",
   "cmake",
+  "zls",
 })
 
 -- Formatting --
@@ -191,6 +192,7 @@ require("conform").setup({
     nix = { "nixfmt" },
     python = { "isort", "black" },
     rust = { "rustfmt", lsp_format = "fallback" },
+    zig = { "zigfmt" },
     javascript = { "prettierd", "prettier", stop_after_first = true },
   },
 })
