@@ -6,7 +6,7 @@
     # Provides PAM authentication for the Wayland lock screen.
     security.pam.services.hyprlock = {};
  
-    home-manager.users.braam = { config, ... }: {
+    home-manager.users.braam = { config, lib, ... }: {
       xdg.configFile."mango/config.conf".source =
         config.lib.dotfiles.link "modules/desktop/mango/config.conf";
 
@@ -166,7 +166,15 @@
       '' + builtins.readFile ./clipboard.css;
 
       # Fuzzel remains the application launcher, not the clipboard picker.
-      programs.fuzzel.enable = true;
+      programs.fuzzel = {
+        enable = true;
+        # Enlarge all Fuzzel menus while retaining the shared font family.
+        settings.main = {
+          font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
+          # Shrink dmenu windows (power and confirmations) to their content.
+          minimal-lines = true;
+        };
+      };
 
       # Home Manager preserves Mako's D-Bus activation and lets Stylix
       # generate the notification colors and shared font.

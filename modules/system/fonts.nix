@@ -15,7 +15,7 @@
       };
       size = lib.mkOption {
         type = lib.types.ints.positive;
-        default = 10;
+        default = 12;
         description = "Default application font size in points.";
       };
     };
