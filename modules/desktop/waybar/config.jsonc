@@ -63,7 +63,8 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "nm-connection-editor"
+        "on-click": "networkmanager_dmenu",
+        "on-click-right": "alacritty -e nmtui"
     },
     "backlight": {
         "format": "{percent}% 󰃠",

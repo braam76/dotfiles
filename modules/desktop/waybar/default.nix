@@ -1,6 +1,20 @@
 {
   flake.nixosModules.waybar = { config, pkgs, ... }: let
     font = config.dotfiles.font;
+    # networkmanager_dmenu 2.7 uses Walker's old -y password flag.
+    # Keep its launcher basename for auto-detection, but adapt to Walker 2.x.
+    networkWalker = pkgs.writeShellScriptBin "walker" ''
+      args=()
+      for arg in "$@"; do
+        case "$arg" in
+          -y) args+=(--password) ;;
+          # Close after selection, including when Walker runs as a service.
+          -k) ;;
+          *) args+=("$arg") ;;
+        esac
+      done
+      exec ${pkgs.walker}/bin/walker "''${args[@]}"
+    '';
   in {
     programs.waybar.enable = true;
 
@@ -12,7 +26,8 @@
       pkgs.alacritty
       pkgs.btop
       pkgs.pavucontrol
-      pkgs.networkmanagerapplet
+      pkgs.networkmanager_dmenu
+      pkgs.networkmanager
       pkgs.wireplumber
       pkgs.brightnessctl
       pkgs.systemd
@@ -24,8 +39,26 @@
         pkgs.python3
         pkgs.brightnessctl
         pkgs.pavucontrol
-        pkgs.networkmanagerapplet
+        pkgs.networkmanager_dmenu
+        pkgs.networkmanager
       ];
+
+      # Use Walker's shared clipboard theme for network/password menus.
+      # Keep advanced editing desktop-independent with nmtui.
+      xdg.configFile."networkmanager-dmenu/config.ini".text = ''
+        [dmenu]
+        dmenu_command = ${networkWalker}/bin/walker
+        prompt = Networks
+        active_chars = ✓
+        wifi_chars = ▂▄▆█
+
+        [dmenu_passphrase]
+        obscure = True
+
+        [editor]
+        terminal = ${pkgs.alacritty}/bin/alacritty
+        gui_if_available = False
+      '';
 
       xdg.configFile."waybar/mango.py".source =
         config.lib.dotfiles.link "modules/desktop/waybar/mango.py";
