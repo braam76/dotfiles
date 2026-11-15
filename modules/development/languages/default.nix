@@ -6,7 +6,7 @@
       gopls
 
       # Nix
-      nil
+      nixd
       nixfmt
 
       # Lua
