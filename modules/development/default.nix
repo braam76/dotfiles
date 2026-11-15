@@ -2,6 +2,7 @@
   flake.nixosModules.development = { pkgs, ... }: {
     imports = with self.nixosModules; [
       neovim
+      emacs
       vscode
       languages
       docker
