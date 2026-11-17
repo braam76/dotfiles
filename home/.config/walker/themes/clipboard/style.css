@@ -1,4 +1,5 @@
 /* Omarchy-inspired Walker picker; colors are generated from Stylix. */
+@import url("colors.css");
 * {
   all: unset;
   font-family: monospace;

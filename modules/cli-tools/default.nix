@@ -8,12 +8,6 @@
       tmux
     ];
 
-    home-manager.users.braam.programs.starship = {
-      enable = true;
-      enableZshIntegration = true;
-      enableFishIntegration = true;
-    };
-
-    environment.systemPackages = with pkgs; [ wget curl btop ];
+    environment.systemPackages = with pkgs; [ wget curl btop stow starship ];
   };
 }

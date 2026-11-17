@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Retain the basename "walker" for networkmanager-dmenu's launcher detection.
+args=()
+for arg in "$@"; do
+    case "$arg" in
+        -y) args+=(--password) ;;
+        -k) ;;
+        *) args+=("$arg") ;;
+    esac
+done
+exec walker "${args[@]}"

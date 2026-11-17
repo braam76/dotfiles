@@ -9,16 +9,7 @@
       qemu
     ];
 
-    home-manager.users.braam = {
-      home.packages = [ pkgs.devenv ];
-
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-        enableFishIntegration = true;
-      };
-    };
+    environment.systemPackages = with pkgs; [ devenv direnv nix-direnv ];
+    environment.pathsToLink = [ "/share/nix-direnv" ];
   };
 }

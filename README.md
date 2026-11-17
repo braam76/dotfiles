@@ -1,129 +1,127 @@
 # Dotfiles
 
+NixOS manages packages, drivers, services and desktop integration. GNU Stow
+manages native application configs under `home/`. There is no Home Manager or
+Stylix configuration layer; the exported palettes are ordinary editable files.
+
+## Install / update
+
+From this checkout:
+
+```sh
+sudo nixos-rebuild switch --flake . --impure
+stow --no-folding --target="$HOME" home
+```
+
+Edit files in `home/` or through their links in your home directory, then reload
+the application. No rebuild is needed for application settings. Commit the
+changes with Git; NixOS rollbacks do not roll back these files.
+
+Shell aliases:
+
 ```sh
 snr-switch  # sudo nixos-rebuild switch --flake ~/dotfiles --impure
 snr-update  # sudo nixos-rebuild switch --flake ~/dotfiles --impure --update
 ```
 
-## Screen lock (Mango)
+### One-time migration from Home Manager
 
-Run `snr-switch`, then log out and back into Mango to start the idle watcher.
+Removing Home Manager from NixOS does not remove its previously deployed links.
+After rebuilding, preview the handoff and then apply it:
+
+```sh
+python3 scripts/migrate-to-stow.py
+python3 scripts/migrate-to-stow.py --apply
+```
+
+The helper backs up old Home Manager links and files conflicting with Stow into
+`~/.local/state/dotfiles-backups/<timestamp>/`, then runs Stow. It does not use
+`stow --adopt`, overwrite the repository from your home directory, or import
+secrets/caches/history. Close configuration editors and KDE System Settings
+before migrating. Log out and back in afterwards to refresh shell/session state.
+
+For a fresh machine, use the normal Stow command instead. If it reports conflicts,
+back up the existing files before retrying. GTK/KDE apps may rewrite some settings;
+review `git diff` before committing.
+
+## Configuration map
+
+```text
+flake.nix / flake.lock       # Nix inputs and pinned versions
+modules/
+  hosts/                    # Hardware import, bootloader and host assembly
+  users/                    # User account and login shell
+  system/                   # Audio, fonts, networking, locale, printing, Nix
+  desktop/                  # Desktop/session packages and service integration
+  cli-tools/                # Shells and CLI packages
+  development/              # Editors, languages, containers and virtual machines
+  vpn/                      # VPN integration
+  ai/                       # AI packages
+home/
+  .config/
+    alacritty/              # Terminal settings, font and colors
+    Code/User/              # VS Code settings
+    direnv/                 # nix-direnv loading
+    elephant/               # Clipboard history provider
+    emacs/                  # Native Elisp configuration
+    fish/                   # Shell initialization and y function
+    fontconfig/             # User font preferences
+    fuzzel/                 # Application launcher
+    git/                    # User identity
+    gtk-3.0/ / gtk-4.0/      # GTK appearance
+    hypr/                   # Hyprlock
+    kdeglobals              # KDE colors and fonts
+    mako/                   # Notifications
+    mango/                  # Window manager and static palette
+    nvim/                   # Native Lua configuration
+    tmux/                   # Multiplexer
+    networkmanager-dmenu/   # Network menu
+    walker/                 # Clipboard picker and styling
+    waybar/                 # Bar, scripts, font and static palette
+    yazi/                   # File manager theme
+  .local/libexec/            # Network menu compatibility helper
+  .pi/agent/settings.json   # Pi settings only, no credentials or sessions
+  .gtkrc-2.0                # GTK2 font settings
+  .zshrc                    # Zsh initialization, aliases and integrations
+scripts/migrate-to-stow.py  # One-time, backed-up handoff from Home Manager
+```
+
+Nix still packages `screenshot`, `clipboard-daemon` and `clipboard-history` with
+their runtime dependencies. Mako's D-Bus activation comes from its installed
+package. VS Code's direnv extension is bundled with its Nix package.
+
+## Mango
+
+Reload configuration with `Super+Shift+R` or:
+
+```sh
+mmsg dispatch reload_config
+```
+
+### Screen lock
 
 - `Super+L`: lock immediately (`Super+Shift+L` switches layouts).
 - Terminal: `hyprlock --grace 0` or `loginctl lock-session`.
 - Automatically locks after 10 minutes idle and before suspend.
 
-Hyprlock uses your account password in a rectangular input field, with Stylix
-colors and a blurred `~/Pictures/wallpaper-nixos-big.png` background. Change the
-wallpaper path in `modules/desktop/mango/default.nix` if needed.
-The idle watcher starts only in Mango; Plasma keeps its own screen locker.
+The idle watcher starts with Mango; Plasma keeps its own screen locker. Edit the
+background path in `home/.config/hypr/hyprlock.conf` to change the wallpaper.
 
-To start (or replace) the idle watcher without logging out after `snr-switch`:
+### Screenshots
 
-```sh
-pkill -x swayidle
-swayidle -w timeout 600 'hyprlock --grace 0' \
-  before-sleep 'hyprlock --grace 0' lock 'hyprlock --grace 0' &
-disown
-```
-
-## Screenshots (Mango)
-
-After running `snr-switch`, reload Mango with `Super+Shift+R`.
-
-- `Print` or `Super+Shift+S`: select an area (`Escape` cancels).
-- `Shift+Print`: capture the full screen (all monitors).
+- `Print` or `Super+Shift+S`: select a region (`Escape` cancels).
+- `Shift+Print`: capture the full screen.
 - Terminal: `screenshot region` or `screenshot full`.
 
-Screenshots are copied to the clipboard as PNG images and added to clipboard
-history first. Click the notification (within 15 seconds) to open a Save dialog
-and choose the folder and filename. Dismissing the notification or cancelling the
-dialog does not save a permanent file. The temporary capture lives only in your
-user runtime directory and is removed when the notification/dialog closes.
+Screenshots are copied to the clipboard first. Click the notification's Save
+button to choose a permanent destination; otherwise the temporary image is
+removed after the notification closes.
 
-## Clipboard history (Mango)
+### Clipboard history
 
-`Super+V` opens Walker's clipboard picker backed by Elephant—the same stack
-used by Omarchy. It has image previews, searchable text history, and action
-hints, with a rounded panel colored by your Stylix theme. Select an entry to copy
-it back to the clipboard, then paste normally. `Escape` closes the picker;
-`Alt+J` shows available actions (including removing entries). Fuzzel remains the
-application launcher on `Super+D`.
+`Super+V` opens Walker's Elephant-backed picker; `Super+D` opens Fuzzel.
+`Escape` closes the picker; `Alt+J` shows available actions.
 
-Run `snr-switch`, then log out and back into Mango to replace the old clipboard
-watchers with Elephant. The database and image previews stay under
-`$XDG_RUNTIME_DIR/clipboard-cache` and temporary images under
-`$XDG_RUNTIME_DIR/clipboard-tmp`. History (including pinned entries) clears on
-shutdown/reboot and may clear after your last logout.
-
-Old cliphist history is not imported. If upgrading from the original persistent
-setup, remove its old database with `rm -f ~/.cache/cliphist/db`.
-
-## Configuration map
-
-```text
-.
-├── flake.nix                         # Inputs and automatic module discovery
-├── flake.lock                        # Pinned input versions
-└── modules/
-    ├── parts.nix                     # Supported systems
-    ├── hosts/
-    │   └── nixos/default.nix          # Host assembly, hardware import and bootloader
-    ├── users/
-    │   └── braam.nix                 # User account, Home Manager and live config links
-    ├── system/
-    │   ├── default.nix               # Base system module imports
-    │   ├── audio.nix                 # PipeWire and RTKit
-    │   ├── fonts.nix                 # Shared font family, package, size and fallbacks
-    │   ├── keyboard.nix              # US/Russian keyboard layouts
-    │   ├── locale.nix                # Locale and timezone
-    │   ├── networking.nix            # NetworkManager
-    │   ├── nix-settings.nix          # Unfree packages and Nix features
-    │   └── printing.nix              # CUPS
-    ├── desktop/
-    │   ├── default.nix               # Desktop module imports, audio and printing
-    │   ├── theme.nix                 # Shared Stylix colorscheme and app targets
-    │   ├── foxglove-dark.yaml        # Additional local Base16 palette (not selected)
-    │   ├── alacritty/default.nix     # Terminal emulator and Stylix integration
-    │   ├── firefox/default.nix       # Firefox
-    │   ├── helium/default.nix        # Helium browser (wrapped AppImage)
-    │   ├── libreoffice/default.nix   # LibreOffice
-    │   ├── flatpak/default.nix       # Flatpak
-    │   ├── plasma/default.nix        # Plasma and SDDM; default login session
-    │   ├── mango/
-    │   │   ├── default.nix           # MangoWM and supporting packages
-    │   │   ├── config.conf           # Window manager settings and keybindings
-    │   │   └── clipboard.css         # Walker clipboard picker styling
-    │   └── waybar/
-    │       ├── default.nix           # Waybar and config links
-    │       ├── config.jsonc          # Bar modules and layout
-    │       ├── mango.py              # Mango window title and power menu
-    │       ├── platform_profile.sh   # ACPI platform profile status
-    │       └── style.css             # Bar styling
-    ├── cli-tools/
-    │   ├── default.nix               # CLI module imports, wget, curl and btop
-    │   ├── fish/default.nix          # Default shell and aliases
-    │   ├── git/default.nix           # Git and user identity
-    │   ├── yazi/default.nix          # Yazi file manager and Zoxide integration
-    │   └── zsh/default.nix           # Optional shell, aliases and history
-    ├── development/
-    │   ├── default.nix               # Development module imports
-    │   ├── docker/default.nix        # Docker daemon and user access
-    │   ├── languages/default.nix     # Languages, LSP servers and formatters
-    │   ├── vscode/default.nix        # Visual Studio Code
-    │   └── neovim/
-    │       ├── default.nix           # Neovim package and config link
-    │       └── init.lua              # Options, keybindings and plugins
-    ├── vpn/
-    │   ├── default.nix               # VPN module imports
-    │   ├── happ/default.nix          # Happ
-    │   └── throne/default.nix        # Throne and TUN mode
-    └── ai/
-        ├── default.nix               # AI module imports
-        └── pi-code/
-            ├── default.nix           # Pi package and live settings link
-            └── config/
-                ├── .gitignore        # Excludes private and runtime data
-                └── agent/
-                    └── settings.json
-```
+Clipboard data and previews stay under `$XDG_RUNTIME_DIR/clipboard-cache`, with
+temporary images under `$XDG_RUNTIME_DIR/clipboard-tmp`. History clears on reboot
+and may clear after your last logout. No clipboard database is version-controlled.

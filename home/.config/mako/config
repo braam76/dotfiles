@@ -1,0 +1,16 @@
+background-color=#0f0f0fFF
+border-color=#8f8aac
+font=JetBrainsMono Nerd Font 12
+on-button-left=invoke-default-action
+progress-color=over #262626
+text-color=#cacaca
+
+[urgency=critical]
+background-color=#0f0f0fFF
+border-color=#ac8a8c
+text-color=#cacaca
+
+[urgency=low]
+background-color=#0f0f0fFF
+border-color=#393939
+text-color=#cacaca
