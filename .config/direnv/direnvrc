@@ -1,0 +1,2 @@
+# Use the Nix-installed version without pinning a garbage-collectable store path.
+source /run/current-system/sw/share/nix-direnv/direnvrc
