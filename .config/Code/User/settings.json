@@ -27,5 +27,5 @@
   "gitlens.graph.details.location": "auto",
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
-  "workbench.colorTheme": "Stylix"
+  "workbench.colorTheme": "Solarized Osaka"
 }
