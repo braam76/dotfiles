@@ -15,7 +15,9 @@
     ];
 
     # Native GTK/KDE settings live in home/.config.
-    environment.systemPackages = [ pkgs.adw-gtk3 ];
+    environment.systemPackages = [ pkgs.adw-gtk3 pkgs.mupdf ];
+    xdg.mime.defaultApplications."application/pdf" = "mupdf.desktop";
+
     qt = {
       enable = true;
       platformTheme = "kde";
