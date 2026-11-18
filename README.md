@@ -97,7 +97,8 @@ scripts/migrate-to-stow.py  # One-time, backed-up handoff from Home Manager
 
 Nix still packages `screenshot`, `clipboard-daemon` and `clipboard-history` with
 their runtime dependencies. Mako's D-Bus activation comes from its installed
-package. VS Code's direnv extension is bundled with its Nix package.
+package. VS Code uses the standard Nix package; install editor extensions through
+VS Code as needed.
 
 ## Mango
 
