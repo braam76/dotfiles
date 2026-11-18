@@ -48,15 +48,15 @@ review `git diff` before committing.
 
 ```text
 flake.nix / flake.lock       # Nix inputs and pinned versions
-modules/
-  hosts/                    # Hardware import, bootloader and host assembly
-  users/                    # User account and login shell
-  system/                   # Audio, fonts, networking, locale, printing, Nix
-  desktop/                  # Desktop/session packages and service integration
-  cli-tools/                # Shells and CLI packages
-  development/              # Editors, languages, containers and virtual machines
-  vpn/                      # VPN integration
-  ai/                       # AI packages
+parts.nix                   # Supported systems
+hosts/                      # Hardware import, bootloader and host assembly
+users/                      # User account and login shell
+system/                     # Audio, fonts, networking, locale, printing, Nix
+desktop/                    # Desktop/session packages and service integration
+cli-tools/                  # Shells and CLI packages
+development/                # Editors, languages, containers and virtual machines
+vpn/                        # VPN integration
+ai/                         # AI packages
 home/
   .config/
     alacritty/              # Terminal settings, font and colors
