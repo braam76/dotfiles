@@ -1,2 +1,7 @@
 # emacs generated files
 *~
+
+# Python tooling
+__pycache__/
+*.pyc
+.venv/

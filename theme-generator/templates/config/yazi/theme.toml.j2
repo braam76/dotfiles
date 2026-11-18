@@ -1,0 +1,126 @@
+# Solarized Osaka palette; existing rules, icons and UI roles retained.
+[completion]
+active = { bg = "{{ roles.surface }}", fg = "{{ palette.magenta }}" }
+border = { fg = "{{ roles.accent }}" }
+inactive = { fg = "{{ roles.foreground }}" }
+
+[filetype]
+rules = [
+  { mime = "image/*", fg = "{{ palette.cyan }}" },
+  { mime = "video/*", fg = "{{ roles.warning }}" },
+  { mime = "audio/*", fg = "{{ roles.warning }}" },
+  { mime = "application/zip", fg = "{{ palette.magenta }}" },
+  { mime = "application/gzip", fg = "{{ palette.magenta }}" },
+  { mime = "application/tar", fg = "{{ palette.magenta }}" },
+  { mime = "application/bzip", fg = "{{ palette.magenta }}" },
+  { mime = "application/bzip2", fg = "{{ palette.magenta }}" },
+  { mime = "application/7z-compressed", fg = "{{ palette.magenta }}" },
+  { mime = "application/rar", fg = "{{ palette.magenta }}" },
+  { mime = "application/xz", fg = "{{ palette.magenta }}" },
+  { mime = "application/doc", fg = "{{ roles.success }}" },
+  { mime = "application/pdf", fg = "{{ roles.success }}" },
+  { mime = "application/rtf", fg = "{{ roles.success }}" },
+  { mime = "application/vnd.*", fg = "{{ roles.success }}" },
+  { url = "*/", fg = "{{ roles.accent }}", bold = true },
+  { mime = "*", fg = "{{ roles.foreground }}" },
+]
+
+[help]
+desc = { fg = "{{ roles.foreground }}" }
+footer = { fg = "{{ roles.foreground }}" }
+hovered = { bg = "{{ roles.surface }}", fg = "{{ roles.bright }}" }
+on = { fg = "{{ palette.magenta }}" }
+run = { fg = "{{ palette.cyan }}" }
+
+[icon]
+conds = [
+  { if = "orphan", text = "", fg = "{{ roles.foreground }}" },
+  { if = "link", text = "", fg = "{{ roles.muted }}" },
+  { if = "block", text = "", fg = "{{ roles.warning }}" },
+  { if = "char", text = "", fg = "{{ roles.warning }}" },
+  { if = "fifo", text = "", fg = "{{ roles.warning }}" },
+  { if = "sock", text = "", fg = "{{ roles.warning }}" },
+  { if = "sticky", text = "", fg = "{{ roles.warning }}" },
+  { if = "dummy", text = "", fg = "{{ roles.error }}" },
+  { if = "dir", text = "", fg = "{{ roles.accent }}" },
+  { if = "exec", text = "", fg = "{{ roles.success }}" },
+  { if = "!dir", text = "", fg = "{{ roles.foreground }}" },
+]
+dirs = [
+  { name = ".config", text = "", fg = "{{ palette.orange }}" },
+  { name = ".git", text = "", fg = "{{ palette.cyan }}" },
+  { name = ".github", text = "", fg = "{{ roles.accent }}" },
+  { name = ".npm", text = "", fg = "{{ roles.accent }}" },
+  { name = "Desktop", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Development", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Documents", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Downloads", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Library", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Movies", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Music", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Pictures", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Public", text = "", fg = "{{ palette.cyan }}" },
+  { name = "Videos", text = "", fg = "{{ palette.cyan }}" },
+]
+
+[indicator]
+current = { bg = "{{ roles.surface }}", bold = true }
+preview = { bg = "{{ roles.surface }}", bold = true }
+
+[input]
+border = { fg = "{{ roles.accent }}" }
+selected = { bg = "{{ roles.surface }}" }
+title = { fg = "{{ roles.foreground }}" }
+value = { fg = "{{ roles.foreground }}" }
+
+[mgr]
+syntect_theme = "~/.config/yazi/solarized-osaka.tmTheme"
+border_style = { fg = "{{ roles.muted }}" }
+count_copied = { bg = "{{ roles.success }}", fg = "{{ roles.background }}" }
+count_cut = { bg = "{{ roles.error }}", fg = "{{ roles.background }}" }
+count_selected = { bg = "{{ roles.warning }}", fg = "{{ roles.background }}" }
+cwd = { fg = "{{ palette.cyan }}" }
+find_keyword = { fg = "{{ roles.success }}", bold = true }
+find_position = { fg = "{{ palette.magenta }}" }
+marker_copied = { bg = "{{ roles.success }}", fg = "{{ roles.success }}" }
+marker_cut = { bg = "{{ roles.error }}", fg = "{{ roles.error }}" }
+marker_selected = { bg = "{{ roles.warning }}", fg = "{{ roles.warning }}" }
+
+[mode]
+normal_alt = { bg = "{{ roles.background }}", fg = "{{ roles.accent }}" }
+normal_main = { bg = "{{ roles.accent }}", fg = "{{ roles.background }}", bold = true }
+select_alt = { bg = "{{ roles.background }}", fg = "{{ roles.success }}" }
+select_main = { bg = "{{ roles.success }}", fg = "{{ roles.background }}", bold = true }
+unset_alt = { bg = "{{ roles.background }}", fg = "{{ roles.error }}" }
+unset_main = { bg = "{{ roles.error }}", fg = "{{ roles.background }}", bold = true }
+
+[pick]
+active = { fg = "{{ palette.magenta }}" }
+border = { fg = "{{ roles.accent }}" }
+inactive = { fg = "{{ roles.foreground }}" }
+
+[status]
+perm_exec = { fg = "{{ roles.success }}" }
+perm_read = { fg = "{{ roles.warning }}" }
+perm_sep = { fg = "{{ palette.cyan }}" }
+perm_type = { fg = "{{ roles.accent }}" }
+perm_write = { fg = "{{ roles.error }}" }
+progress_error = { bg = "{{ roles.background }}", fg = "{{ roles.error }}" }
+progress_label = { bg = "{{ roles.background }}", fg = "{{ roles.foreground }}" }
+progress_normal = { bg = "{{ roles.background }}", fg = "{{ roles.foreground }}" }
+
+[tabs]
+active = { bg = "{{ roles.accent }}", fg = "{{ roles.background }}", bold = true }
+inactive = { bg = "{{ roles.surface }}", fg = "{{ roles.accent }}" }
+
+[tasks]
+border = { fg = "{{ roles.accent }}" }
+hovered = { bg = "{{ roles.surface }}", fg = "{{ roles.bright }}" }
+title = { fg = "{{ roles.foreground }}" }
+
+[which]
+cand = { fg = "{{ palette.cyan }}" }
+desc = { fg = "{{ roles.foreground }}" }
+mask = { bg = "{{ roles.surface }}" }
+rest = { fg = "{{ roles.error }}" }
+separator_style = { fg = "{{ roles.muted }}" }

@@ -1,9 +1,25 @@
 ;;; init.el --- Personal Emacs configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; Elpaca manages packages; Stylix supplies fonts and colors via default.el.
+;; Elpaca manages packages; the local Solarized Osaka theme supplies colors.
 
 ;;; Code:
+
+(add-to-list 'custom-theme-load-path (expand-file-name "themes/" user-emacs-directory))
+(load-theme 'solarized-osaka t)
+(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 120)
+
+;; Watch the source directory: atomic renders replace the symlink's referent.
+(require 'filenotify)
+(defvar dotfiles-theme-watch nil)
+(when dotfiles-theme-watch
+  (file-notify-rm-watch dotfiles-theme-watch))
+(let ((directory (file-name-directory
+                  (file-truename (expand-file-name "themes/solarized-osaka-theme.el"
+                                                   user-emacs-directory)))))
+  (setq dotfiles-theme-watch
+        (file-notify-add-watch directory '(change)
+          (lambda (_event) (load-theme 'solarized-osaka t)))))
 
 ;; Upstream Elpaca installer. Downloads Elpaca on first startup.
 (defvar elpaca-installer-version 0.12)

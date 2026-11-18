@@ -1,0 +1,41 @@
+/* Share the palette with GTK3 rather than maintaining two copies. */
+@import url("../gtk-3.0/solarized-osaka.css");
+
+/* Modern libadwaita uses CSS properties instead of GTK named colors. */
+:root {
+  --accent-color: {{ roles.accent }};
+  --accent-bg-color: {{ roles.accent }};
+  --accent-fg-color: {{ roles.background }};
+  --destructive-color: {{ roles.error }};
+  --destructive-bg-color: {{ roles.error }};
+  --destructive-fg-color: {{ roles.background }};
+  --success-color: {{ roles.success }};
+  --success-bg-color: {{ roles.success }};
+  --success-fg-color: {{ roles.background }};
+  --warning-color: {{ roles.warning }};
+  --warning-bg-color: {{ roles.warning }};
+  --warning-fg-color: {{ roles.background }};
+  --error-color: {{ roles.error }};
+  --error-bg-color: {{ roles.error }};
+  --error-fg-color: {{ roles.background }};
+  --window-bg-color: {{ roles.background }};
+  --window-fg-color: {{ roles.foreground }};
+  --view-bg-color: {{ roles.background }};
+  --view-fg-color: {{ roles.foreground }};
+  --headerbar-bg-color: {{ roles.surface }};
+  --headerbar-fg-color: {{ roles.bright }};
+  --headerbar-border-color: {{ roles.surface }};
+  --headerbar-backdrop-color: {{ roles.background }};
+  --sidebar-bg-color: {{ roles.surface }};
+  --sidebar-fg-color: {{ roles.foreground }};
+  --sidebar-backdrop-color: {{ roles.background }};
+  --secondary-sidebar-bg-color: {{ roles.surface }};
+  --secondary-sidebar-fg-color: {{ roles.foreground }};
+  --secondary-sidebar-backdrop-color: {{ roles.background }};
+  --card-bg-color: {{ roles.surface }};
+  --card-fg-color: {{ roles.bright }};
+  --dialog-bg-color: {{ roles.surface }};
+  --dialog-fg-color: {{ roles.bright }};
+  --popover-bg-color: {{ roles.surface }};
+  --popover-fg-color: {{ roles.bright }};
+}

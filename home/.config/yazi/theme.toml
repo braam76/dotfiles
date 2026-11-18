@@ -1,376 +1,126 @@
-[completion.active]
-bg = "#393939"
-fg = "#ac8aac"
+# Solarized Osaka palette; existing rules, icons and UI roles retained.
+[completion]
+active = { bg = "#002d38", fg = "#d33682" }
+border = { fg = "#278bd3" }
+inactive = { fg = "#839495" }
 
-[completion.border]
-fg = "#8f8aac"
+[filetype]
+rules = [
+  { mime = "image/*", fg = "#2aa298" },
+  { mime = "video/*", fg = "#b38600" },
+  { mime = "audio/*", fg = "#b38600" },
+  { mime = "application/zip", fg = "#d33682" },
+  { mime = "application/gzip", fg = "#d33682" },
+  { mime = "application/tar", fg = "#d33682" },
+  { mime = "application/bzip", fg = "#d33682" },
+  { mime = "application/bzip2", fg = "#d33682" },
+  { mime = "application/7z-compressed", fg = "#d33682" },
+  { mime = "application/rar", fg = "#d33682" },
+  { mime = "application/xz", fg = "#d33682" },
+  { mime = "application/doc", fg = "#859900" },
+  { mime = "application/pdf", fg = "#859900" },
+  { mime = "application/rtf", fg = "#859900" },
+  { mime = "application/vnd.*", fg = "#859900" },
+  { url = "*/", fg = "#278bd3", bold = true },
+  { mime = "*", fg = "#839495" },
+]
 
-[completion.inactive]
-fg = "#cacaca"
+[help]
+desc = { fg = "#839495" }
+footer = { fg = "#839495" }
+hovered = { bg = "#002d38", fg = "#ede7d4" }
+on = { fg = "#d33682" }
+run = { fg = "#2aa298" }
 
-[[filetype.rules]]
-fg = "#8aabac"
-mime = "image/*"
+[icon]
+conds = [
+  { if = "orphan", text = "", fg = "#839495" },
+  { if = "link", text = "", fg = "#586e74" },
+  { if = "block", text = "", fg = "#b38600" },
+  { if = "char", text = "", fg = "#b38600" },
+  { if = "fifo", text = "", fg = "#b38600" },
+  { if = "sock", text = "", fg = "#b38600" },
+  { if = "sticky", text = "", fg = "#b38600" },
+  { if = "dummy", text = "", fg = "#dc312e" },
+  { if = "dir", text = "", fg = "#278bd3" },
+  { if = "exec", text = "", fg = "#859900" },
+  { if = "!dir", text = "", fg = "#839495" },
+]
+dirs = [
+  { name = ".config", text = "", fg = "#ca4c16" },
+  { name = ".git", text = "", fg = "#2aa298" },
+  { name = ".github", text = "", fg = "#278bd3" },
+  { name = ".npm", text = "", fg = "#278bd3" },
+  { name = "Desktop", text = "", fg = "#2aa298" },
+  { name = "Development", text = "", fg = "#2aa298" },
+  { name = "Documents", text = "", fg = "#2aa298" },
+  { name = "Downloads", text = "", fg = "#2aa298" },
+  { name = "Library", text = "", fg = "#2aa298" },
+  { name = "Movies", text = "", fg = "#2aa298" },
+  { name = "Music", text = "", fg = "#2aa298" },
+  { name = "Pictures", text = "", fg = "#2aa298" },
+  { name = "Public", text = "", fg = "#2aa298" },
+  { name = "Videos", text = "", fg = "#2aa298" },
+]
 
-[[filetype.rules]]
-fg = "#aca98a"
-mime = "video/*"
+[indicator]
+current = { bg = "#002d38", bold = true }
+preview = { bg = "#002d38", bold = true }
 
-[[filetype.rules]]
-fg = "#aca98a"
-mime = "audio/*"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/zip"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/gzip"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/tar"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/bzip"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/bzip2"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/7z-compressed"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/rar"
-
-[[filetype.rules]]
-fg = "#ac8aac"
-mime = "application/xz"
-
-[[filetype.rules]]
-fg = "#8aac8b"
-mime = "application/doc"
-
-[[filetype.rules]]
-fg = "#8aac8b"
-mime = "application/pdf"
-
-[[filetype.rules]]
-fg = "#8aac8b"
-mime = "application/rtf"
-
-[[filetype.rules]]
-fg = "#8aac8b"
-mime = "application/vnd.*"
-
-[[filetype.rules]]
-bold = true
-fg = "#8f8aac"
-url = "*/"
-
-[[filetype.rules]]
-fg = "#cacaca"
-mime = "*"
-
-[help.desc]
-fg = "#cacaca"
-
-[help.footer]
-fg = "#cacaca"
-
-[help.hovered]
-bg = "#393939"
-fg = "#cacaca"
-
-[help.on]
-fg = "#ac8aac"
-
-[help.run]
-fg = "#8aabac"
-
-[[icon.conds]]
-fg = "#cacaca"
-if = "orphan"
-text = ""
-
-[[icon.conds]]
-fg = "#4c4c4c"
-if = "link"
-text = ""
-
-[[icon.conds]]
-fg = "#aca98a"
-if = "block"
-text = ""
-
-[[icon.conds]]
-fg = "#aca98a"
-if = "char"
-text = ""
-
-[[icon.conds]]
-fg = "#aca98a"
-if = "fifo"
-text = ""
-
-[[icon.conds]]
-fg = "#aca98a"
-if = "sock"
-text = ""
-
-[[icon.conds]]
-fg = "#aca98a"
-if = "sticky"
-text = ""
-
-[[icon.conds]]
-fg = "#ac8a8c"
-if = "dummy"
-text = ""
-
-[[icon.conds]]
-fg = "#8f8aac"
-if = "dir"
-text = ""
-
-[[icon.conds]]
-fg = "#8aac8b"
-if = "exec"
-text = ""
-
-[[icon.conds]]
-fg = "#cacaca"
-if = "!dir"
-text = ""
-
-[[icon.dirs]]
-fg = "#ceb188"
-name = ".config"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = ".git"
-text = ""
-
-[[icon.dirs]]
-fg = "#8f8aac"
-name = ".github"
-text = ""
-
-[[icon.dirs]]
-fg = "#8f8aac"
-name = ".npm"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Desktop"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Development"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Documents"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Downloads"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Library"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Movies"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Music"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Pictures"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Public"
-text = ""
-
-[[icon.dirs]]
-fg = "#8aabac"
-name = "Videos"
-text = ""
-
-[indicator.current]
-bg = "#262626"
-bold = true
-
-[indicator.preview]
-bg = "#262626"
-bold = true
-
-[input.border]
-fg = "#8f8aac"
-
-[input.selected]
-bg = "#393939"
-
-[input.title]
-fg = "#cacaca"
-
-[input.value]
-fg = "#cacaca"
+[input]
+border = { fg = "#278bd3" }
+selected = { bg = "#002d38" }
+title = { fg = "#839495" }
+value = { fg = "#839495" }
 
 [mgr]
-syntect_theme = "~/.config/yazi/mountain.tmTheme"
+syntect_theme = "~/.config/yazi/solarized-osaka.tmTheme"
+border_style = { fg = "#586e74" }
+count_copied = { bg = "#859900", fg = "#00141a" }
+count_cut = { bg = "#dc312e", fg = "#00141a" }
+count_selected = { bg = "#b38600", fg = "#00141a" }
+cwd = { fg = "#2aa298" }
+find_keyword = { fg = "#859900", bold = true }
+find_position = { fg = "#d33682" }
+marker_copied = { bg = "#859900", fg = "#859900" }
+marker_cut = { bg = "#dc312e", fg = "#dc312e" }
+marker_selected = { bg = "#b38600", fg = "#b38600" }
 
-[mgr.border_style]
-fg = "#4c4c4c"
+[mode]
+normal_alt = { bg = "#00141a", fg = "#278bd3" }
+normal_main = { bg = "#278bd3", fg = "#00141a", bold = true }
+select_alt = { bg = "#00141a", fg = "#859900" }
+select_main = { bg = "#859900", fg = "#00141a", bold = true }
+unset_alt = { bg = "#00141a", fg = "#dc312e" }
+unset_main = { bg = "#dc312e", fg = "#00141a", bold = true }
 
-[mgr.count_copied]
-bg = "#8aac8b"
-fg = "#0f0f0f"
+[pick]
+active = { fg = "#d33682" }
+border = { fg = "#278bd3" }
+inactive = { fg = "#839495" }
 
-[mgr.count_cut]
-bg = "#ac8a8c"
-fg = "#0f0f0f"
+[status]
+perm_exec = { fg = "#859900" }
+perm_read = { fg = "#b38600" }
+perm_sep = { fg = "#2aa298" }
+perm_type = { fg = "#278bd3" }
+perm_write = { fg = "#dc312e" }
+progress_error = { bg = "#00141a", fg = "#dc312e" }
+progress_label = { bg = "#00141a", fg = "#839495" }
+progress_normal = { bg = "#00141a", fg = "#839495" }
 
-[mgr.count_selected]
-bg = "#aca98a"
-fg = "#0f0f0f"
+[tabs]
+active = { bg = "#278bd3", fg = "#00141a", bold = true }
+inactive = { bg = "#002d38", fg = "#278bd3" }
 
-[mgr.cwd]
-fg = "#8aabac"
+[tasks]
+border = { fg = "#278bd3" }
+hovered = { bg = "#002d38", fg = "#ede7d4" }
+title = { fg = "#839495" }
 
-[mgr.find_keyword]
-bold = true
-fg = "#8aac8b"
-
-[mgr.find_position]
-fg = "#ac8aac"
-
-[mgr.marker_copied]
-bg = "#8aac8b"
-fg = "#8aac8b"
-
-[mgr.marker_cut]
-bg = "#ac8a8c"
-fg = "#ac8a8c"
-
-[mgr.marker_selected]
-bg = "#aca98a"
-fg = "#aca98a"
-
-[mode.normal_alt]
-bg = "#0f0f0f"
-fg = "#8f8aac"
-
-[mode.normal_main]
-bg = "#8f8aac"
-bold = true
-fg = "#0f0f0f"
-
-[mode.select_alt]
-bg = "#0f0f0f"
-fg = "#8aac8b"
-
-[mode.select_main]
-bg = "#8aac8b"
-bold = true
-fg = "#0f0f0f"
-
-[mode.unset_alt]
-bg = "#0f0f0f"
-fg = "#ac8a8c"
-
-[mode.unset_main]
-bg = "#ac8a8c"
-bold = true
-fg = "#0f0f0f"
-
-[pick.active]
-fg = "#ac8aac"
-
-[pick.border]
-fg = "#8f8aac"
-
-[pick.inactive]
-fg = "#cacaca"
-
-[status.perm_exec]
-fg = "#8aac8b"
-
-[status.perm_read]
-fg = "#aca98a"
-
-[status.perm_sep]
-fg = "#8aabac"
-
-[status.perm_type]
-fg = "#8f8aac"
-
-[status.perm_write]
-fg = "#ac8a8c"
-
-[status.progress_error]
-bg = "#0f0f0f"
-fg = "#ac8a8c"
-
-[status.progress_label]
-bg = "#0f0f0f"
-fg = "#cacaca"
-
-[status.progress_normal]
-bg = "#0f0f0f"
-fg = "#cacaca"
-
-[tabs.active]
-bg = "#8f8aac"
-bold = true
-fg = "#0f0f0f"
-
-[tabs.inactive]
-bg = "#191919"
-fg = "#8f8aac"
-
-[tasks.border]
-fg = "#8f8aac"
-
-[tasks.hovered]
-bg = "#393939"
-fg = "#cacaca"
-
-[tasks.title]
-fg = "#cacaca"
-
-[which.cand]
-fg = "#8aabac"
-
-[which.desc]
-fg = "#cacaca"
-
-[which.mask]
-bg = "#262626"
-
-[which.rest]
-fg = "#ac8a8c"
-
-[which.separator_style]
-fg = "#4c4c4c"
+[which]
+cand = { fg = "#2aa298" }
+desc = { fg = "#839495" }
+mask = { bg = "#002d38" }
+rest = { fg = "#dc312e" }
+separator_style = { fg = "#586e74" }

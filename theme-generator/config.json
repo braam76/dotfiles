@@ -1,0 +1,124 @@
+{
+  "theme": "themes/solarized-osaka.json",
+  "templates": [
+    {
+      "template": "config/alacritty/solarized-osaka.toml.j2",
+      "target": ".config/alacritty/solarized-osaka.toml"
+    },
+    {
+      "template": "config/btop/themes/solarized-osaka.theme.j2",
+      "target": ".config/btop/themes/solarized-osaka.theme"
+    },
+    {
+      "template": "config/emacs/themes/solarized-osaka-theme.el.j2",
+      "target": ".config/emacs/themes/solarized-osaka-theme.el"
+    },
+    {
+      "template": "config/fuzzel/fuzzel.ini.j2",
+      "target": ".config/fuzzel/fuzzel.ini"
+    },
+    {
+      "template": "config/gtk-3.0/solarized-osaka.css.j2",
+      "target": ".config/gtk-3.0/solarized-osaka.css"
+    },
+    {
+      "template": "config/gtk-4.0/gtk.css.j2",
+      "target": ".config/gtk-4.0/gtk.css"
+    },
+    {
+      "template": "config/hypr/hyprlock.conf.j2",
+      "target": ".config/hypr/hyprlock.conf"
+    },
+    {
+      "template": "config/kdeglobals.j2",
+      "target": ".config/kdeglobals"
+    },
+    {
+      "template": "config/mako/config.j2",
+      "target": ".config/mako/config",
+      "reload": [
+        [
+          "makoctl",
+          "reload"
+        ]
+      ]
+    },
+    {
+      "template": "config/mango/colors.conf.j2",
+      "target": ".config/mango/colors.conf",
+      "reload": [
+        [
+          "mmsg",
+          "dispatch",
+          "reload_config"
+        ]
+      ]
+    },
+    {
+      "template": "config/starship.toml.j2",
+      "target": ".config/starship.toml"
+    },
+    {
+      "template": "config/fish/conf.d/solarized-osaka.fish.j2",
+      "target": ".config/fish/conf.d/solarized-osaka.fish"
+    },
+    {
+      "template": "config/tmux/solarized-osaka.conf.j2",
+      "target": ".config/tmux/solarized-osaka.conf",
+      "reload": [
+        [
+          "tmux",
+          "source-file",
+          "/home/braam/.config/tmux/tmux.conf"
+        ]
+      ]
+    },
+    {
+      "template": "config/walker/themes/clipboard/colors.css.j2",
+      "target": ".config/walker/themes/clipboard/colors.css",
+      "reload": [
+        [
+          "pkill",
+          "-x",
+          "walker"
+        ]
+      ]
+    },
+    {
+      "template": "config/waybar/colors.css.j2",
+      "target": ".config/waybar/colors.css",
+      "reload": [
+        [
+          "pkill",
+          "-USR2",
+          "-x",
+          "waybar"
+        ]
+      ]
+    },
+    {
+      "template": "config/yazi/theme.toml.j2",
+      "target": ".config/yazi/theme.toml"
+    },
+    {
+      "template": "config/yazi/solarized-osaka.tmTheme.j2",
+      "target": ".config/yazi/solarized-osaka.tmTheme"
+    },
+    {
+      "template": "local/share/color-schemes/SolarizedOsaka.colors.j2",
+      "target": ".local/share/color-schemes/SolarizedOsaka.colors"
+    },
+    {
+      "template": "gtkrc-2.0.j2",
+      "target": ".gtkrc-2.0"
+    },
+    {
+      "template": "nvim-palette.lua.j2",
+      "target": ".config/nvim/lua/generated_theme.lua"
+    },
+    {
+      "template": "zsh-theme.zsh.j2",
+      "target": ".config/zsh/theme.zsh"
+    }
+  ]
+}

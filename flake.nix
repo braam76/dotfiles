@@ -23,6 +23,7 @@
       {
         imports = [
           ./parts.nix
+          ./theme-generator.nix
         ] ++ map inputs.import-tree [
           ./ai
           ./cli-tools

@@ -1,0 +1,81 @@
+# Theme: solarized-osaka
+# By: Gemini (adapted from Solarized by Ethan Schoonover and Solarized Osaka by craftzdog)
+
+# Main bg - Solarized Osaka base03 (slightly brighter than original Solarized base03)
+theme[main_bg]="{{ roles.background }}"
+
+# Main text color - Solarized Osaka base00 (slightly brighter than original Solarized base0)
+theme[main_fg]="{{ roles.foreground }}"
+
+# Title color for boxes - Solarized Osaka base3 (very light background)
+theme[title]="{{ palette.base3 }}"
+
+# Highlight color for keyboard shortcuts - Solarized Osaka blue
+theme[hi_fg]="{{ roles.accent }}"
+
+# Background color of selected item in processes box - Solarized Osaka base02
+theme[selected_bg]="{{ roles.surface }}"
+
+# Foreground color of selected item in processes box - Solarized Osaka base2
+theme[selected_fg]="{{ roles.bright }}"
+
+# Color of inactive/disabled text - Solarized Osaka base01
+theme[inactive_fg]="{{ roles.muted }}"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text - Solarized Osaka cyan
+theme[proc_misc]="{{ palette.cyan }}"
+
+# Cpu box outline color - Solarized Osaka base00
+theme[cpu_box]="{{ roles.foreground }}"
+
+# Memory/disks box outline color - Solarized Osaka base00
+theme[mem_box]="{{ roles.foreground }}"
+
+# Net up/down box outline color - Solarized Osaka base00
+theme[net_box]="{{ roles.foreground }}"
+
+# Processes box outline color - Solarized Osaka base00
+theme[proc_box]="{{ roles.foreground }}"
+
+# Box divider line and small boxes line color - Solarized Osaka base01
+theme[div_line]="{{ roles.muted }}"
+
+# Temperature graph colors
+theme[temp_start]="{{ roles.success }}"
+theme[temp_mid]="{{ roles.warning }}"
+theme[temp_end]="{{ roles.error }}"
+
+# CPU graph colors
+theme[cpu_start]="{{ roles.accent }}"
+theme[cpu_mid]="{{ palette.violet }}"
+theme[cpu_end]="{{ palette.magenta }}"
+
+# Mem/Disk free meter
+theme[free_start]="{{ roles.success }}"
+theme[free_mid]="{{ palette.cyan }}"
+theme[free_end]="{{ roles.accent }}"
+
+# Mem/Disk cached meter
+theme[cached_start]="{{ roles.warning }}"
+theme[cached_mid]="{{ palette.orange }}"
+theme[cached_end]="{{ roles.error }}"
+
+# Mem/Disk available meter
+theme[available_start]="{{ palette.cyan }}"
+theme[available_mid]="{{ roles.accent }}"
+theme[available_end]="{{ palette.violet }}"
+
+# Mem/Disk used meter
+theme[used_start]="{{ roles.error }}"
+theme[used_mid]="{{ palette.magenta }}"
+theme[used_end]="{{ palette.orange }}"
+
+# Download graph colors
+theme[download_start]="{{ roles.accent }}"
+theme[download_mid]="{{ palette.cyan }}"
+theme[download_end]="{{ roles.success }}"
+
+# Upload graph colors
+theme[upload_start]="{{ palette.magenta }}"
+theme[upload_mid]="{{ roles.error }}"
+theme[upload_end]="{{ palette.orange }}"

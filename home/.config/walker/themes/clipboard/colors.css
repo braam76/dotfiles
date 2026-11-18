@@ -1,6 +1,13 @@
-@define-color base #0f0f0f;
-@define-color surface #191919;
-@define-color text #cacaca;
-@define-color muted #4c4c4c;
-@define-color accent #8f8aac;
-@define-color error #ac8a8c;
+/* From motorsss/omarchy-solarizedosaka-theme/walker.css. */
+@define-color selected-text #278bd3;
+@define-color text #839495;
+@define-color base #00141a;
+@define-color border #6d72c5;
+@define-color foreground #839495;
+@define-color background #00141a;
+
+/* Aliases and supporting palette colors for the existing clipboard layout. */
+@define-color surface #002d38;
+@define-color muted #586e74;
+@define-color accent @selected-text;
+@define-color error #dc312e;

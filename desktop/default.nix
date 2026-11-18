@@ -3,6 +3,7 @@
     imports = with self.nixosModules; [
       audio
       printing
+      theme-generator
       plasma
       mango
       waybar

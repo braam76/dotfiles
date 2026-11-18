@@ -44,6 +44,14 @@ For a fresh machine, use the normal Stow command instead. If it reports conflict
 back up the existing files before retrying. GTK/KDE apps may rewrite some settings;
 review `git diff` before committing.
 
+## Theme
+
+Application colors come from one JSON palette and Jinja templates in
+[`theme-generator/`](theme-generator/README.md). A user service watches inputs,
+generates native configs under `home/`, and reloads supported apps. See
+[THEME.md](THEME.md) for scope and limitations. Edit templates rather than their
+generated outputs; other configs remain directly editable.
+
 ## Configuration map
 
 ```text
@@ -57,6 +65,7 @@ cli-tools/                  # Shells and CLI packages
 development/                # Editors, languages, containers and virtual machines
 vpn/                        # VPN integration
 ai/                         # AI packages
+theme-generator.nix         # Theme renderer package, dev shell and user service
 home/
   .config/
     alacritty/              # Terminal settings, font and colors

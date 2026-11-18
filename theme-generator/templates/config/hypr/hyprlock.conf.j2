@@ -1,0 +1,39 @@
+# Colors from motorsss/omarchy-solarizedosaka-theme/hyprlock.conf.
+$color = rgba({{ roles.background|rgb }},1.0)
+$inner_color = rgba({{ roles.background|rgb }},1.0)
+$outer_color = rgba({{ roles.foreground|rgb }},1.0)
+$font_color = rgba({{ palette.base3|rgb }},1.0)
+$check_color = rgba({{ roles.accent|rgb }},1.0)
+
+background {
+  monitor=
+  blur_passes=3
+  blur_size=8
+  brightness=0.700000
+  color=$color
+  path=/home/braam/Pictures/wallpaper-nixos-big.png
+}
+
+general {
+  hide_cursor=true
+  ignore_empty_input=true
+}
+
+input-field {
+  monitor=
+  size=320, 56
+  check_color=$check_color
+  dots_center=true
+  fade_on_empty=false
+  fail_color=rgb({{ roles.error|hex }})
+  fail_text=Incorrect password. Try again.
+  font_color=$font_color
+  halign=center
+  inner_color=$inner_color
+  outer_color=$outer_color
+  outline_thickness=2
+  placeholder_text=Password…
+  position=0, -40
+  rounding=10
+  valign=center
+}

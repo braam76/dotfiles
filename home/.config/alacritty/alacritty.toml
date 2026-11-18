@@ -1,35 +1,5 @@
-[colors.bright]
-black = "#393939"
-blue = "#8f8aac"
-cyan = "#8aabac"
-green = "#8aac8b"
-magenta = "#ac8aac"
-red = "#ac8a8c"
-white = "#f0f0f0"
-yellow = "#aca98a"
-
-[colors.cursor]
-cursor = "#cacaca"
-text = "#0f0f0f"
-
-[colors.normal]
-black = "#0f0f0f"
-blue = "#8f8aac"
-cyan = "#8aabac"
-green = "#8aac8b"
-magenta = "#ac8aac"
-red = "#ac8a8c"
-white = "#cacaca"
-yellow = "#aca98a"
-
-[colors.primary]
-background = "#0f0f0f"
-bright_foreground = "#f0f0f0"
-foreground = "#cacaca"
-
-[colors.selection]
-background = "#262626"
-text = "#cacaca"
+[general]
+import = ["~/.config/alacritty/solarized-osaka.toml"]
 
 [font]
 size = 12
@@ -44,4 +14,4 @@ key = "Return"
 mods = "Shift"
 
 [window]
-opacity = 1.0
+opacity = 0.85

@@ -1,0 +1,48 @@
+# Keep Starship's default prompt layout, with Solarized Osaka colors.
+palette = "solarized_osaka"
+
+[palettes.solarized_osaka]
+black = "#00141a"
+white = "#ede7d4"
+bright-white = "#fdf6e2"
+red = "#dc312e"
+green = "#859900"
+yellow = "#b38600"
+blue = "#278bd3"
+purple = "#d33682"
+cyan = "#2aa298"
+bright-black = "#586e74"
+bright-red = "#dc312e"
+bright-green = "#859900"
+bright-yellow = "#b38600"
+bright-blue = "#278bd3"
+bright-purple = "#6d72c5"
+bright-cyan = "#2aa298"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[directory]
+style = "bold blue"
+read_only_style = "red"
+
+[git_branch]
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[cmd_duration]
+style = "bold yellow"
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+
+[hostname]
+style = "bold cyan"
+
+[time]
+style = "bold bright-black"
