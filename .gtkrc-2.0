@@ -1,3 +1,26 @@
 gtk-font-name = "JetBrainsMono Nerd Font 12"
-gtk-theme-name = "adw-gtk3"
 
+# GTK2 cannot use GTK3 CSS; supply its palette using native RC styles.
+style "solarized-osaka" {
+  fg[NORMAL] = "#839495"
+  fg[ACTIVE] = "#ede7d4"
+  fg[PRELIGHT] = "#ede7d4"
+  fg[SELECTED] = "#00141a"
+  fg[INSENSITIVE] = "#586e74"
+  bg[NORMAL] = "#00141a"
+  bg[ACTIVE] = "#002d38"
+  bg[PRELIGHT] = "#002d38"
+  bg[SELECTED] = "#278bd3"
+  bg[INSENSITIVE] = "#00141a"
+  base[NORMAL] = "#00141a"
+  base[ACTIVE] = "#002d38"
+  base[PRELIGHT] = "#002d38"
+  base[SELECTED] = "#278bd3"
+  base[INSENSITIVE] = "#002d38"
+  text[NORMAL] = "#839495"
+  text[ACTIVE] = "#ede7d4"
+  text[PRELIGHT] = "#ede7d4"
+  text[SELECTED] = "#00141a"
+  text[INSENSITIVE] = "#586e74"
+}
+class "*" style "solarized-osaka"

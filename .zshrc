@@ -40,3 +40,17 @@ alias snr-update='sudo nixos-rebuild switch --flake ~/dotfiles --impure --update
 
 source /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+source ~/.config/zsh/theme.zsh
+
+# Re-read the small generated palette only when its content changes.
+autoload -Uz add-zsh-hook
+function _dotfiles_theme_reload() {
+  local theme="$HOME/.config/zsh/theme.zsh"
+  [[ -r "$theme" ]] || return 0
+  local content="$(<"$theme")"
+  if [[ "$content" != "${_dotfiles_theme_content-}" ]]; then
+    source "$theme"
+    typeset -g _dotfiles_theme_content="$content"
+  fi
+}
+add-zsh-hook precmd _dotfiles_theme_reload

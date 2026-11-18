@@ -1,6 +1,9 @@
-@define-color foreground #cacaca;
-@define-color foreground-inactive #4c4c4c;
-@define-color background #0f0f0f;
-@define-color surface #262626;
-@define-color accent #8f8aac;
-@define-color urgent #ac8a8c;
+/* From motorsss/omarchy-solarizedosaka-theme/waybar.css. */
+@define-color foreground #839495;
+@define-color background #00141a;
+
+/* Supporting palette colors for the existing floating-block layout. */
+@define-color foreground-inactive #586e74;
+@define-color surface #002d38;
+@define-color accent #278bd3;
+@define-color urgent #dc312e;

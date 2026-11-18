@@ -42,7 +42,7 @@ window#waybar > box {
 #clock,
 #battery,
 #custom-power {
-    background: @background;
+    background: alpha(@background, 0.85);
     border-radius: 4px;
     padding: 8px 15px 8px 10px;
     margin: 0;
@@ -118,7 +118,7 @@ window#waybar > box {
 }
 
 tooltip {
-    background: @background;
+    background: alpha(@background, 0.85);
     color: @foreground;
     border: 1px solid @surface;
     border-radius: 4px;

@@ -1,4 +1,4 @@
-/* Omarchy-inspired Walker picker; colors are generated from Stylix. */
+/* Omarchy-inspired Walker picker; Solarized Osaka colors in colors.css. */
 @import url("colors.css");
 * {
   all: unset;
@@ -12,8 +12,8 @@ scrollbar { opacity: 0; }
 .large-icons { -gtk-icon-size: 48px; }
 
 .box-wrapper {
-  background: alpha(@base, 0.97);
-  border: 2px solid @accent;
+  background: @base;
+  border: 2px solid @border;
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 12px 36px alpha(black, 0.35);
@@ -57,4 +57,4 @@ child:hover .item-box { background: alpha(@accent, 0.1); }
 .keybind-label { padding: 2px 6px; color: @muted; }
 .keybind { margin-right: 8px; }
 .error { background: alpha(@error, 0.2); padding: 12px; border-radius: 8px; }
-popover { background: @surface; border: 1px solid @accent; border-radius: 10px; padding: 10px; }
+popover { background: @surface; border: 1px solid @border; border-radius: 10px; padding: 10px; }

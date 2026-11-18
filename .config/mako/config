@@ -1,16 +1,17 @@
-background-color=#0f0f0fFF
-border-color=#8f8aac
+# Colors from motorsss/omarchy-solarizedosaka-theme/mako.ini.
+background-color=#00141a
+border-color=#6d72c5
 font=JetBrainsMono Nerd Font 12
 on-button-left=invoke-default-action
-progress-color=over #262626
-text-color=#cacaca
+progress-color=over #002d38
+text-color=#839495
 
 [urgency=critical]
-background-color=#0f0f0fFF
-border-color=#ac8a8c
-text-color=#cacaca
+background-color=#00141a
+border-color=#dc312e
+text-color=#839495
 
 [urgency=low]
-background-color=#0f0f0fFF
-border-color=#393939
-text-color=#cacaca
+background-color=#00141a
+border-color=#586e74
+text-color=#839495
