@@ -24,25 +24,8 @@ snr-switch  # sudo nixos-rebuild switch --flake ~/dotfiles --impure
 snr-update  # sudo nixos-rebuild switch --flake ~/dotfiles --impure --update
 ```
 
-### One-time migration from Home Manager
-
-Removing Home Manager from NixOS does not remove its previously deployed links.
-After rebuilding, preview the handoff and then apply it:
-
-```sh
-python3 scripts/migrate-to-stow.py
-python3 scripts/migrate-to-stow.py --apply
-```
-
-The helper backs up old Home Manager links and files conflicting with Stow into
-`~/.local/state/dotfiles-backups/<timestamp>/`, then runs Stow. It does not use
-`stow --adopt`, overwrite the repository from your home directory, or import
-secrets/caches/history. Close configuration editors and KDE System Settings
-before migrating. Log out and back in afterwards to refresh shell/session state.
-
-For a fresh machine, use the normal Stow command instead. If it reports conflicts,
-back up the existing files before retrying. GTK/KDE apps may rewrite some settings;
-review `git diff` before committing.
+If Stow reports conflicts, back up the existing files before retrying. GTK/KDE
+apps may rewrite some settings; review `git diff` before committing.
 
 ## Theme
 
@@ -92,7 +75,6 @@ home/
   .pi/agent/settings.json   # Pi settings only, no credentials or sessions
   .gtkrc-2.0                # GTK2 font settings
   .zshrc                    # Zsh initialization, aliases and integrations
-scripts/migrate-to-stow.py  # One-time, backed-up handoff from Home Manager
 ```
 
 Nix still packages `screenshot`, `clipboard-daemon` and `clipboard-history` with
