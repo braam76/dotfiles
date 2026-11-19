@@ -4,7 +4,7 @@
       isNormalUser = true;
       description = "Ilgar Gamidov";
       extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-      shell = pkgs.fish;
+      shell = pkgs.zsh;
       packages = with pkgs; [ codex ];
     };
   };

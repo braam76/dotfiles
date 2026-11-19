@@ -26,6 +26,7 @@
         pkgs.noto-fonts
         pkgs.noto-fonts-color-emoji
         pkgs.font-awesome
+        pkgs.corefonts # Includes Microsoft Times New Roman.
       ];
       fontconfig.defaultFonts = {
         serif = [ font.name ];
