@@ -1,2 +1,3 @@
 /* Shared Solarized Osaka colors for GTK3 and GTK4. */
 @import url("solarized-osaka.css");
+@import 'colors.css';
