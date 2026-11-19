@@ -66,6 +66,7 @@ home/
     mako/                   # Notifications
     mango/                  # Window manager and static palette
     nvim/                   # Native Lua configuration
+    stylua/stylua.toml       # Global Lua formatting fallback
     tmux/                   # Multiplexer
     networkmanager-dmenu/   # Network menu
     walker/                 # Clipboard picker and styling
@@ -81,6 +82,13 @@ Nix still packages `screenshot`, `clipboard-daemon` and `clipboard-history` with
 their runtime dependencies. Mako's D-Bus activation comes from its installed
 package. VS Code uses the standard Nix package; install editor extensions through
 VS Code as needed.
+
+## Lua formatting
+
+In Neovim, use `<leader>lf` to format the current buffer. StyLua uses the
+project's `stylua.toml` or `.stylua.toml` if present, otherwise it falls back to
+`~/.config/stylua/stylua.toml`. On the command line, use `stylua -s file.lua` to
+use the same config lookup.
 
 ## Mango
 
