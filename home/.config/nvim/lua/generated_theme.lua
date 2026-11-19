@@ -2,304 +2,318 @@
 local M = {}
 M.palette = {
 
-  ["base0"] = "#9fabad",
+    ["base0"] = "#9fabad",
 
-  ["base00"] = "#647a82",
+    ["base00"] = "#647a82",
 
-  ["base01"] = "#586e74",
+    ["base01"] = "#586e74",
 
-  ["base02"] = "#073541",
+    ["base02"] = "#073541",
 
-  ["base03"] = "#002d38",
+    ["base03"] = "#002d38",
 
-  ["base04"] = "#00141a",
+    ["base04"] = "#00141a",
 
-  ["base1"] = "#adb8b8",
+    ["base1"] = "#adb8b8",
 
-  ["base2"] = "#ede7d4",
+    ["base2"] = "#ede7d4",
 
-  ["base3"] = "#fdf6e2",
+    ["base3"] = "#fdf6e2",
 
-  ["base4"] = "#ffffff",
+    ["base4"] = "#ffffff",
 
-  ["bg"] = "#00141a",
+    ["bg"] = "#00141a",
 
-  ["bg_highlight"] = "#002d38",
+    ["bg_highlight"] = "#002d38",
 
-  ["blue"] = "#278bd3",
+    ["blue"] = "#278bd3",
 
-  ["blue100"] = "#a8dbff",
+    ["blue100"] = "#a8dbff",
 
-  ["blue200"] = "#79c5fc",
+    ["blue200"] = "#79c5fc",
 
-  ["blue300"] = "#47adf5",
+    ["blue300"] = "#47adf5",
 
-  ["blue400"] = "#309ce8",
+    ["blue400"] = "#309ce8",
 
-  ["blue50"] = "#d7eeff",
+    ["blue50"] = "#d7eeff",
 
-  ["blue500"] = "#278bd3",
+    ["blue500"] = "#278bd3",
 
-  ["blue600"] = "#2078b6",
+    ["blue600"] = "#2078b6",
 
-  ["blue700"] = "#1b6498",
+    ["blue700"] = "#1b6498",
 
-  ["blue800"] = "#155079",
+    ["blue800"] = "#155079",
 
-  ["blue900"] = "#103956",
+    ["blue900"] = "#103956",
 
-  ["blue950"] = "#062439",
+    ["blue950"] = "#062439",
 
-  ["cyan"] = "#2aa298",
+    ["cyan"] = "#2aa298",
 
-  ["cyan100"] = "#b8fffa",
+    ["cyan100"] = "#b8fffa",
 
-  ["cyan200"] = "#6cf9ed",
+    ["cyan200"] = "#6cf9ed",
 
-  ["cyan300"] = "#2beede",
+    ["cyan300"] = "#2beede",
 
-  ["cyan400"] = "#22d3c4",
+    ["cyan400"] = "#22d3c4",
 
-  ["cyan50"] = "#e2fffd",
+    ["cyan50"] = "#e2fffd",
 
-  ["cyan500"] = "#2aa298",
+    ["cyan500"] = "#2aa298",
 
-  ["cyan600"] = "#238682",
+    ["cyan600"] = "#238682",
 
-  ["cyan700"] = "#1a6365",
+    ["cyan700"] = "#1a6365",
 
-  ["cyan800"] = "#154f51",
+    ["cyan800"] = "#154f51",
 
-  ["cyan900"] = "#103a3c",
+    ["cyan900"] = "#103a3c",
 
-  ["cyan950"] = "#052223",
+    ["cyan950"] = "#052223",
 
-  ["fg"] = "#839495",
+    ["fg"] = "#839495",
 
-  ["green"] = "#859900",
+    ["green"] = "#859900",
 
-  ["green100"] = "#d6ffad",
+    ["green100"] = "#d6ffad",
 
-  ["green200"] = "#bdff52",
+    ["green200"] = "#bdff52",
 
-  ["green300"] = "#b7fa00",
+    ["green300"] = "#b7fa00",
 
-  ["green400"] = "#a3cc00",
+    ["green400"] = "#a3cc00",
 
-  ["green50"] = "#ebffd7",
+    ["green50"] = "#ebffd7",
 
-  ["green500"] = "#859900",
+    ["green500"] = "#859900",
 
-  ["green600"] = "#6f8000",
+    ["green600"] = "#6f8000",
 
-  ["green700"] = "#586600",
+    ["green700"] = "#586600",
 
-  ["green800"] = "#424d00",
+    ["green800"] = "#424d00",
 
-  ["green900"] = "#2c3300",
+    ["green900"] = "#2c3300",
 
-  ["green950"] = "#191d00",
+    ["green950"] = "#191d00",
 
-  ["magenta"] = "#d33682",
+    ["magenta"] = "#d33682",
 
-  ["magenta100"] = "#ff75b8",
+    ["magenta100"] = "#ff75b8",
 
-  ["magenta200"] = "#f962ab",
+    ["magenta200"] = "#f962ab",
 
-  ["magenta300"] = "#f254a1",
+    ["magenta300"] = "#f254a1",
 
-  ["magenta400"] = "#e44491",
+    ["magenta400"] = "#e44491",
 
-  ["magenta50"] = "#ffb9db",
+    ["magenta50"] = "#ffb9db",
 
-  ["magenta500"] = "#d33682",
+    ["magenta500"] = "#d33682",
 
-  ["magenta600"] = "#c52b75",
+    ["magenta600"] = "#c52b75",
 
-  ["magenta700"] = "#b02769",
+    ["magenta700"] = "#b02769",
 
-  ["magenta800"] = "#821c4d",
+    ["magenta800"] = "#821c4d",
 
-  ["magenta900"] = "#541232",
+    ["magenta900"] = "#541232",
 
-  ["magenta950"] = "#38071e",
+    ["magenta950"] = "#38071e",
 
-  ["none"] = "NONE",
+    ["none"] = "NONE",
 
-  ["orange"] = "#ca4c16",
+    ["orange"] = "#ca4c16",
 
-  ["orange100"] = "#ff9166",
+    ["orange100"] = "#ff9166",
 
-  ["orange200"] = "#fc723b",
+    ["orange200"] = "#fc723b",
 
-  ["orange300"] = "#f84f0d",
+    ["orange300"] = "#f84f0d",
 
-  ["orange400"] = "#e55010",
+    ["orange400"] = "#e55010",
 
-  ["orange50"] = "#ffccb7",
+    ["orange50"] = "#ffccb7",
 
-  ["orange500"] = "#ca4c16",
+    ["orange500"] = "#ca4c16",
 
-  ["orange600"] = "#b84514",
+    ["orange600"] = "#b84514",
 
-  ["orange700"] = "#a23c11",
+    ["orange700"] = "#a23c11",
 
-  ["orange800"] = "#81310e",
+    ["orange800"] = "#81310e",
 
-  ["orange900"] = "#5c230a",
+    ["orange900"] = "#5c230a",
 
-  ["orange950"] = "#3c1403",
+    ["orange950"] = "#3c1403",
 
-  ["red"] = "#dc312e",
+    ["red"] = "#dc312e",
 
-  ["red100"] = "#ff9b99",
+    ["red100"] = "#ff9b99",
 
-  ["red200"] = "#fb7674",
+    ["red200"] = "#fb7674",
 
-  ["red300"] = "#f65351",
+    ["red300"] = "#f65351",
 
-  ["red400"] = "#ea413e",
+    ["red400"] = "#ea413e",
 
-  ["red50"] = "#ffd2d1",
+    ["red50"] = "#ffd2d1",
 
-  ["red500"] = "#dc312e",
+    ["red500"] = "#dc312e",
 
-  ["red600"] = "#cd2623",
+    ["red600"] = "#cd2623",
 
-  ["red700"] = "#b7221f",
+    ["red700"] = "#b7221f",
 
-  ["red800"] = "#871917",
+    ["red800"] = "#871917",
 
-  ["red900"] = "#57100f",
+    ["red900"] = "#57100f",
 
-  ["red950"] = "#380605",
+    ["red950"] = "#380605",
 
-  ["violet"] = "#6d72c5",
+    ["violet"] = "#6d72c5",
 
-  ["violet100"] = "#cccfff",
+    ["violet100"] = "#cccfff",
 
-  ["violet200"] = "#b4b7f9",
+    ["violet200"] = "#b4b7f9",
 
-  ["violet300"] = "#9ca0ed",
+    ["violet300"] = "#9ca0ed",
 
-  ["violet400"] = "#8084db",
+    ["violet400"] = "#8084db",
 
-  ["violet50"] = "#eaebff",
+    ["violet50"] = "#eaebff",
 
-  ["violet500"] = "#6d72c5",
+    ["violet500"] = "#6d72c5",
 
-  ["violet600"] = "#5b60be",
+    ["violet600"] = "#5b60be",
 
-  ["violet700"] = "#494eb6",
+    ["violet700"] = "#494eb6",
 
-  ["violet800"] = "#363a87",
+    ["violet800"] = "#363a87",
 
-  ["violet900"] = "#25285b",
+    ["violet900"] = "#25285b",
 
-  ["violet950"] = "#0e103a",
+    ["violet950"] = "#0e103a",
 
-  ["yellow"] = "#b38600",
+    ["yellow"] = "#b38600",
 
-  ["yellow100"] = "#ffe999",
+    ["yellow100"] = "#ffe999",
 
-  ["yellow200"] = "#ffd54d",
+    ["yellow200"] = "#ffd54d",
 
-  ["yellow300"] = "#ffbf00",
+    ["yellow300"] = "#ffbf00",
 
-  ["yellow400"] = "#dba400",
+    ["yellow400"] = "#dba400",
 
-  ["yellow50"] = "#fff5d1",
+    ["yellow50"] = "#fff5d1",
 
-  ["yellow500"] = "#b38600",
+    ["yellow500"] = "#b38600",
 
-  ["yellow600"] = "#8f6b00",
+    ["yellow600"] = "#8f6b00",
 
-  ["yellow700"] = "#664d00",
+    ["yellow700"] = "#664d00",
 
-  ["yellow800"] = "#4d3900",
+    ["yellow800"] = "#4d3900",
 
-  ["yellow900"] = "#332700",
+    ["yellow900"] = "#332700",
 
-  ["yellow950"] = "#1d1600",
-
+    ["yellow950"] = "#1d1600",
 }
 M.roles = {
 
-  ["accent"] = "#278bd3",
+    ["accent"] = "#278bd3",
 
-  ["background"] = "#00141a",
+    ["background"] = "#00141a",
 
-  ["border"] = "#073541",
+    ["border"] = "#073541",
 
-  ["bright"] = "#ede7d4",
+    ["bright"] = "#ede7d4",
 
-  ["error"] = "#dc312e",
+    ["error"] = "#dc312e",
 
-  ["foreground"] = "#839495",
+    ["foreground"] = "#839495",
 
-  ["muted"] = "#586e74",
+    ["muted"] = "#586e74",
 
-  ["selection"] = "#073541",
+    ["selection"] = "#073541",
 
-  ["success"] = "#859900",
+    ["success"] = "#859900",
 
-  ["surface"] = "#002d38",
+    ["surface"] = "#002d38",
 
-  ["warning"] = "#b38600",
-
+    ["warning"] = "#b38600",
 }
 function M.setup()
-  require("solarized-osaka").setup({
-    style = "vivid",
-    transparent = true,
-    terminal_colors = true,
-    on_colors = function(colors)
-      -- Override AFTER the plugin computes vivid colors; JSON is authoritative.
-      for key, value in pairs(M.palette) do colors[key] = value end
-      colors.bg = M.roles.background
-      colors.fg = M.roles.foreground
-      colors.bg_highlight = M.roles.surface
-      colors.border = M.roles.border
-      colors.bg_popup = M.roles.background
-      colors.bg_statusline = M.roles.surface
-      colors.bg_sidebar = M.roles.background
-      colors.bg_float = M.roles.background
-      colors.fg_float = M.roles.foreground
-      colors.error = M.roles.error
-      colors.warning = M.roles.warning
-      colors.info = M.roles.accent
-      colors.hint = M.palette.cyan
-      colors.todo = M.palette.violet
-    end,
-    on_highlights = function(highlights)
-      -- The plugin uses base0 for Normal, not fg; bind UI roles explicitly.
-      for _, group in ipairs({ "Normal", "NormalNC", "NormalFloat", "NormalSB" }) do
-        highlights[group] = { fg = M.roles.foreground, bg = "NONE" }
-      end
-      for _, group in ipairs({ "SignColumn", "FoldColumn", "EndOfBuffer" }) do
-        highlights[group] = { fg = M.roles.muted, bg = "NONE" }
-      end
-      highlights.MsgArea = { fg = M.roles.foreground }
-      highlights.Cursor = { fg = M.roles.background, bg = M.roles.bright }
-      highlights.FloatBorder = { fg = M.roles.border, bg = "NONE" }
-      highlights.WinSeparator = { fg = M.roles.border }
-      highlights.Pmenu = { fg = M.roles.foreground, bg = M.roles.surface }
-      highlights.PmenuSel = { fg = M.roles.bright, bg = M.roles.selection }
-      highlights.Visual = { bg = M.roles.selection }
-      highlights.StatusLine = { fg = M.roles.bright, bg = M.roles.surface }
-      highlights.StatusLineNC = { fg = M.roles.muted, bg = "NONE" }
-    end,
-  })
+    require("solarized-osaka").setup {
+        style = "vivid",
+        transparent = true,
+        terminal_colors = true,
+        on_colors = function(colors)
+            -- Override AFTER the plugin computes vivid colors; JSON is authoritative.
+            for key, value in pairs(M.palette) do
+                colors[key] = value
+            end
+            colors.bg = M.roles.background
+            colors.fg = M.roles.foreground
+            colors.bg_highlight = M.roles.surface
+            colors.border = M.roles.border
+            colors.bg_popup = M.roles.background
+            colors.bg_statusline = M.roles.surface
+            colors.bg_sidebar = M.roles.background
+            colors.bg_float = M.roles.background
+            colors.fg_float = M.roles.foreground
+            colors.error = M.roles.error
+            colors.warning = M.roles.warning
+            colors.info = M.roles.accent
+            colors.hint = M.palette.cyan
+            colors.todo = M.palette.violet
+        end,
+        on_highlights = function(highlights)
+            -- The plugin uses base0 for Normal, not fg; bind UI roles explicitly.
+            for _, group in ipairs { "Normal", "NormalNC", "NormalFloat", "NormalSB" } do
+                highlights[group] = { fg = M.roles.foreground, bg = "NONE" }
+            end
+            for _, group in ipairs { "SignColumn", "FoldColumn", "EndOfBuffer" } do
+                highlights[group] = { fg = M.roles.muted, bg = "NONE" }
+            end
+            highlights.MsgArea = { fg = M.roles.foreground }
+            highlights.Cursor = { fg = M.roles.background, bg = M.roles.bright }
+            highlights.FloatBorder = { fg = M.roles.border, bg = "NONE" }
+            highlights.WinSeparator = { fg = M.roles.border }
+            highlights.Pmenu = { fg = M.roles.foreground, bg = M.roles.surface }
+            highlights.PmenuSel = { fg = M.roles.bright, bg = M.roles.selection }
+            highlights.Visual = { bg = M.roles.selection }
+            highlights.StatusLine = { fg = M.roles.bright, bg = M.roles.surface }
+            highlights.StatusLineNC = { fg = M.roles.muted, bg = "NONE" }
+        end,
+    }
 end
 function M.apply()
-  M.setup()
-  vim.cmd.colorscheme("solarized-osaka-vivid")
-  local ansi = {
-    M.roles.surface, M.roles.error, M.roles.success, M.roles.warning,
-    M.roles.accent, M.palette.magenta, M.palette.cyan, M.roles.bright,
-    M.roles.muted, M.roles.error, M.roles.success, M.roles.warning,
-    M.roles.accent, M.palette.magenta, M.palette.cyan, M.palette.base3,
-  }
-  for index, value in ipairs(ansi) do vim.g["terminal_color_" .. (index - 1)] = value end
+    M.setup()
+    vim.cmd.colorscheme "solarized-osaka-vivid"
+    local ansi = {
+        M.roles.surface,
+        M.roles.error,
+        M.roles.success,
+        M.roles.warning,
+        M.roles.accent,
+        M.palette.magenta,
+        M.palette.cyan,
+        M.roles.bright,
+        M.roles.muted,
+        M.roles.error,
+        M.roles.success,
+        M.roles.warning,
+        M.roles.accent,
+        M.palette.magenta,
+        M.palette.cyan,
+        M.palette.base3,
+    }
+    for index, value in ipairs(ansi) do
+        vim.g["terminal_color_" .. (index - 1)] = value
+    end
 end
 return M
