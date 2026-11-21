@@ -24,16 +24,4 @@ mini_in_one.setup {
     statusline = {
         use_icons = vim.g.have_nerd_font,
     },
-
-    pick = {
-        window = {
-            config = { border = "rounded" },
-        },
-    },
 }
-
-local pick = mini_in_one.pick.builtin
-vim.keymap.set("n", "<leader> ", pick.files, { desc = "Mini files" })
-vim.keymap.set("n", "<leader>mg", pick.grep_live, { desc = "Mini grep live" })
-vim.keymap.set("n", "<leader>mb", pick.buffers, { desc = "Mini buffers" })
-vim.keymap.set("n", "<leader>mh", pick.help, { desc = "Mini help" })
