@@ -1,17 +1,23 @@
-# Colors from motorsss/omarchy-solarizedosaka-theme/mako.ini.
-background-color=#00141a
-border-color=#6d72c5
+# Vague palette: https://github.com/vague-theme/vague
+background-color=#141415
+border-color=#7e98e8
 font=JetBrainsMono Nerd Font 12
 on-button-left=invoke-default-action
-progress-color=over #002d38
-text-color=#839495
+progress-color=over #252530
+text-color=#cdcdcd
 
 [urgency=critical]
-background-color=#00141a
-border-color=#dc312e
-text-color=#839495
+background-color=#141415
+border-color=#d8647e
+text-color=#cdcdcd
 
 [urgency=low]
-background-color=#00141a
-border-color=#586e74
-text-color=#839495
+background-color=#141415
+border-color=#606079
+text-color=#cdcdcd
+
+[mode=do-not-disturb]
+invisible=1
+
+[mode=do-not-disturb urgency=critical]
+invisible=0

@@ -1,0 +1,81 @@
+# Theme: Vague
+# Palette: https://github.com/vague-theme/vague
+
+# Main background
+theme[main_bg]="#141415"
+
+# Main text color
+theme[main_fg]="#cdcdcd"
+
+# Title color for boxes
+theme[title]="#cdcdcd"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#6e94b2"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#252530"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#d7d7d7"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#606079"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#aeaed1"
+
+# Cpu box outline color
+theme[cpu_box]="#cdcdcd"
+
+# Memory/disks box outline color
+theme[mem_box]="#cdcdcd"
+
+# Net up/down box outline color
+theme[net_box]="#cdcdcd"
+
+# Processes box outline color
+theme[proc_box]="#cdcdcd"
+
+# Box divider line and small boxes line color
+theme[div_line]="#606079"
+
+# Temperature graph colors
+theme[temp_start]="#7fa563"
+theme[temp_mid]="#f3be7c"
+theme[temp_end]="#d8647e"
+
+# CPU graph colors
+theme[cpu_start]="#6e94b2"
+theme[cpu_mid]="#7e98e8"
+theme[cpu_end]="#bb9dbd"
+
+# Mem/Disk free meter
+theme[free_start]="#7fa563"
+theme[free_mid]="#aeaed1"
+theme[free_end]="#6e94b2"
+
+# Mem/Disk cached meter
+theme[cached_start]="#f3be7c"
+theme[cached_mid]="#e0a363"
+theme[cached_end]="#d8647e"
+
+# Mem/Disk available meter
+theme[available_start]="#aeaed1"
+theme[available_mid]="#6e94b2"
+theme[available_end]="#7e98e8"
+
+# Mem/Disk used meter
+theme[used_start]="#d8647e"
+theme[used_mid]="#bb9dbd"
+theme[used_end]="#e0a363"
+
+# Download graph colors
+theme[download_start]="#6e94b2"
+theme[download_mid]="#aeaed1"
+theme[download_end]="#7fa563"
+
+# Upload graph colors
+theme[upload_start]="#bb9dbd"
+theme[upload_mid]="#d8647e"
+theme[upload_end]="#e0a363"

@@ -1,13 +1,13 @@
-/* From motorsss/omarchy-solarizedosaka-theme/walker.css. */
-@define-color selected-text #278bd3;
-@define-color text #839495;
-@define-color base #00141a;
-@define-color border #6d72c5;
-@define-color foreground #839495;
-@define-color background #00141a;
+/* Vague palette: https://github.com/vague-theme/vague */
+@define-color selected-text #6e94b2;
+@define-color text #cdcdcd;
+@define-color base #141415;
+@define-color border #7e98e8;
+@define-color foreground #cdcdcd;
+@define-color background #141415;
 
 /* Aliases and supporting palette colors for the existing clipboard layout. */
-@define-color surface #002d38;
-@define-color muted #586e74;
+@define-color surface #252530;
+@define-color muted #606079;
 @define-color accent @selected-text;
-@define-color error #dc312e;
+@define-color error #d8647e;

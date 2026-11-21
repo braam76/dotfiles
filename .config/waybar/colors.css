@@ -1,9 +1,9 @@
-/* From motorsss/omarchy-solarizedosaka-theme/waybar.css. */
-@define-color foreground #839495;
-@define-color background #00141a;
+/* Vague palette: https://github.com/vague-theme/vague */
+@define-color foreground #cdcdcd;
+@define-color background #141415;
 
 /* Supporting palette colors for the existing floating-block layout. */
-@define-color foreground-inactive #586e74;
-@define-color surface #002d38;
-@define-color accent #278bd3;
-@define-color urgent #dc312e;
+@define-color foreground-inactive #606079;
+@define-color surface #252530;
+@define-color accent #6e94b2;
+@define-color urgent #d8647e;

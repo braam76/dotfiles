@@ -1,13 +1,13 @@
-;;; solarized-osaka-theme.el --- Solarized Osaka palette -*- lexical-binding: t; -*-
-;; Adapted from motorsss/omarchy-solarizedosaka-theme's terminal palette.
-(deftheme solarized-osaka "Solarized Osaka dark theme.")
-(let ((bg "#00141a") (surface "#002d38") (fg "#839495")
-      (muted "#586e74") (bright "#ede7d4") (white "#fdf6e2")
-      (red "#dc312e") (green "#859900") (yellow "#b38600")
-      (blue "#278bd3") (magenta "#d33682") (cyan "#2aa298")
-      (violet "#6d72c5"))
+;;; vague-theme.el --- Vague palette -*- lexical-binding: t; -*-
+;; Palette: https://github.com/vague-theme/vague
+(deftheme vague "Vague dark theme.")
+(let ((bg "#141415") (surface "#252530") (fg "#cdcdcd")
+      (muted "#606079") (bright "#d7d7d7") (white "#cdcdcd")
+      (red "#d8647e") (green "#7fa563") (yellow "#f3be7c")
+      (blue "#6e94b2") (magenta "#bb9dbd") (cyan "#aeaed1")
+      (iris "#7e98e8"))
   (custom-theme-set-faces
-   'solarized-osaka
+   'vague
    `(default ((t (:background ,bg :foreground ,fg))))
    `(cursor ((t (:background ,bright))))
    `(fringe ((t (:background ,bg :foreground ,muted))))
@@ -17,7 +17,7 @@
    `(shadow ((t (:foreground ,muted))))
    `(minibuffer-prompt ((t (:foreground ,blue :weight bold))))
    `(link ((t (:foreground ,blue :underline t))))
-   `(link-visited ((t (:foreground ,violet :underline t))))
+   `(link-visited ((t (:foreground ,iris :underline t))))
    `(success ((t (:foreground ,green :weight bold))))
    `(warning ((t (:foreground ,yellow :weight bold))))
    `(error ((t (:foreground ,red :weight bold))))
@@ -29,7 +29,7 @@
    `(font-lock-function-name-face ((t (:foreground ,blue))))
    `(font-lock-keyword-face ((t (:foreground ,green :weight bold))))
    `(font-lock-negation-char-face ((t (:foreground ,red))))
-   `(font-lock-preprocessor-face ((t (:foreground ,violet))))
+   `(font-lock-preprocessor-face ((t (:foreground ,iris))))
    `(font-lock-string-face ((t (:foreground ,cyan))))
    `(font-lock-type-face ((t (:foreground ,yellow))))
    `(font-lock-variable-name-face ((t (:foreground ,blue))))
@@ -64,5 +64,5 @@
    `(org-block ((t (:background ,surface))))
    `(org-todo ((t (:foreground ,red :weight bold))))
    `(org-done ((t (:foreground ,green :weight bold))))))
-(provide-theme 'solarized-osaka)
-;;; solarized-osaka-theme.el ends here
+(provide-theme 'vague)
+;;; vague-theme.el ends here

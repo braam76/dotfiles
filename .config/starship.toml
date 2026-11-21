@@ -1,23 +1,23 @@
-# Keep Starship's default prompt layout, with Solarized Osaka colors.
-palette = "solarized_osaka"
+# Keep Starship's default prompt layout, with Vague colors.
+palette = "vague"
 
-[palettes.solarized_osaka]
-black = "#00141a"
-white = "#ede7d4"
-bright-white = "#fdf6e2"
-red = "#dc312e"
-green = "#859900"
-yellow = "#b38600"
-blue = "#278bd3"
-purple = "#d33682"
-cyan = "#2aa298"
-bright-black = "#586e74"
-bright-red = "#dc312e"
-bright-green = "#859900"
-bright-yellow = "#b38600"
-bright-blue = "#278bd3"
-bright-purple = "#6d72c5"
-bright-cyan = "#2aa298"
+[palettes.vague]
+black = "#141415"
+white = "#d7d7d7"
+bright-white = "#d7d7d7"
+red = "#d8647e"
+green = "#7fa563"
+yellow = "#f3be7c"
+blue = "#6e94b2"
+purple = "#bb9dbd"
+cyan = "#aeaed1"
+bright-black = "#606079"
+bright-red = "#e08398"
+bright-green = "#99b782"
+bright-yellow = "#f5cb96"
+bright-blue = "#8ba9c1"
+bright-purple = "#c9b1ca"
+bright-cyan = "#bebeda"
 
 [character]
 success_symbol = "[❯](bold green)"

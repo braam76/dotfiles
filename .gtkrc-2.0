@@ -1,39 +1,26 @@
-gtk-enable-animations=1
-gtk-theme-name="adw-gtk3-dark"
-gtk-primary-button-warps-slider=1
-gtk-toolbar-style=3
-gtk-menu-images=1
-gtk-button-images=1
-gtk-cursor-blink-time=1000
-gtk-cursor-blink=1
-gtk-cursor-theme-size=24
-gtk-cursor-theme-name="breeze_cursors"
-gtk-sound-theme-name="ocean"
-gtk-icon-theme-name="breeze-dark"
-gtk-font-name="JetBrainsMono Nerd Font,  12"
 gtk-font-name = "JetBrainsMono Nerd Font 12"
 
 # GTK2 cannot use GTK3 CSS; supply its palette using native RC styles.
-style "solarized-osaka" {
-  fg[NORMAL] = "#839495"
-  fg[ACTIVE] = "#ede7d4"
-  fg[PRELIGHT] = "#ede7d4"
-  fg[SELECTED] = "#00141a"
-  fg[INSENSITIVE] = "#586e74"
-  bg[NORMAL] = "#00141a"
-  bg[ACTIVE] = "#002d38"
-  bg[PRELIGHT] = "#002d38"
-  bg[SELECTED] = "#278bd3"
-  bg[INSENSITIVE] = "#00141a"
-  base[NORMAL] = "#00141a"
-  base[ACTIVE] = "#002d38"
-  base[PRELIGHT] = "#002d38"
-  base[SELECTED] = "#278bd3"
-  base[INSENSITIVE] = "#002d38"
-  text[NORMAL] = "#839495"
-  text[ACTIVE] = "#ede7d4"
-  text[PRELIGHT] = "#ede7d4"
-  text[SELECTED] = "#00141a"
-  text[INSENSITIVE] = "#586e74"
+style "vague" {
+  fg[NORMAL] = "#cdcdcd"
+  fg[ACTIVE] = "#d7d7d7"
+  fg[PRELIGHT] = "#d7d7d7"
+  fg[SELECTED] = "#141415"
+  fg[INSENSITIVE] = "#606079"
+  bg[NORMAL] = "#141415"
+  bg[ACTIVE] = "#252530"
+  bg[PRELIGHT] = "#252530"
+  bg[SELECTED] = "#6e94b2"
+  bg[INSENSITIVE] = "#141415"
+  base[NORMAL] = "#141415"
+  base[ACTIVE] = "#252530"
+  base[PRELIGHT] = "#252530"
+  base[SELECTED] = "#6e94b2"
+  base[INSENSITIVE] = "#252530"
+  text[NORMAL] = "#cdcdcd"
+  text[ACTIVE] = "#d7d7d7"
+  text[PRELIGHT] = "#d7d7d7"
+  text[SELECTED] = "#141415"
+  text[INSENSITIVE] = "#606079"
 }
-class "*" style "solarized-osaka"
+class "*" style "vague"

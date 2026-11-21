@@ -1,6 +1,6 @@
-vim.pack.add { "https://github.com/craftzdog/solarized-osaka.nvim" }
+vim.pack.add { "https://github.com/vague-theme/vague.nvim" }
 
--- Keep the plugin's highlights, but take every palette value from generated JSON.
+-- Reapply the palette when the theme generator updates it.
 local theme_path = vim.fn.stdpath "config" .. "/lua/generated_theme.lua"
 local theme_stamp
 local function reload_theme()

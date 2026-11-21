@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-<key>name</key><string>Solarized Osaka</string>
+<key>name</key><string>Vague</string>
 <key>settings</key><array>
 <dict><key>settings</key><dict>
-  <key>background</key><string>#00141a</string>
-  <key>foreground</key><string>#839495</string>
-  <key>caret</key><string>#ede7d4</string>
-  <key>selection</key><string>#002d38</string>
-  <key>lineHighlight</key><string>#002d38</string>
+  <key>background</key><string>#141415</string>
+  <key>foreground</key><string>#cdcdcd</string>
+  <key>caret</key><string>#d7d7d7</string>
+  <key>selection</key><string>#252530</string>
+  <key>lineHighlight</key><string>#252530</string>
 </dict></dict>
 <dict><key>scope</key><string>comment, punctuation.definition.comment</string><key>settings</key><dict>
-  <key>foreground</key><string>#586e74</string><key>fontStyle</key><string>italic</string>
+  <key>foreground</key><string>#606079</string><key>fontStyle</key><string>italic</string>
 </dict></dict>
 <dict><key>scope</key><string>string</string><key>settings</key><dict>
-  <key>foreground</key><string>#2aa298</string>
+  <key>foreground</key><string>#aeaed1</string>
 </dict></dict>
 <dict><key>scope</key><string>keyword, storage</string><key>settings</key><dict>
-  <key>foreground</key><string>#859900</string>
+  <key>foreground</key><string>#7fa563</string>
 </dict></dict>
 <dict><key>scope</key><string>constant, support.constant</string><key>settings</key><dict>
-  <key>foreground</key><string>#d33682</string>
+  <key>foreground</key><string>#bb9dbd</string>
 </dict></dict>
 <dict><key>scope</key><string>entity.name.function, support.function</string><key>settings</key><dict>
-  <key>foreground</key><string>#278bd3</string>
+  <key>foreground</key><string>#6e94b2</string>
 </dict></dict>
 <dict><key>scope</key><string>entity.name.type, entity.name.class, support.type, support.class</string><key>settings</key><dict>
-  <key>foreground</key><string>#b38600</string>
+  <key>foreground</key><string>#f3be7c</string>
 </dict></dict>
 <dict><key>scope</key><string>variable, entity.other.attribute-name</string><key>settings</key><dict>
-  <key>foreground</key><string>#278bd3</string>
+  <key>foreground</key><string>#6e94b2</string>
 </dict></dict>
 <dict><key>scope</key><string>entity.name.tag, keyword.operator</string><key>settings</key><dict>
-  <key>foreground</key><string>#6d72c5</string>
+  <key>foreground</key><string>#7e98e8</string>
 </dict></dict>
 <dict><key>scope</key><string>invalid, invalid.illegal</string><key>settings</key><dict>
-  <key>foreground</key><string>#fdf6e2</string><key>background</key><string>#dc312e</string>
+  <key>foreground</key><string>#cdcdcd</string><key>background</key><string>#d8647e</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.heading</string><key>settings</key><dict>
-  <key>foreground</key><string>#278bd3</string><key>fontStyle</key><string>bold</string>
+  <key>foreground</key><string>#6e94b2</string><key>fontStyle</key><string>bold</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.bold</string><key>settings</key><dict>
-  <key>foreground</key><string>#ede7d4</string><key>fontStyle</key><string>bold</string>
+  <key>foreground</key><string>#d7d7d7</string><key>fontStyle</key><string>bold</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.italic</string><key>settings</key><dict>
   <key>fontStyle</key><string>italic</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.inserted</string><key>settings</key><dict>
-  <key>foreground</key><string>#859900</string>
+  <key>foreground</key><string>#7fa563</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.deleted</string><key>settings</key><dict>
-  <key>foreground</key><string>#dc312e</string>
+  <key>foreground</key><string>#d8647e</string>
 </dict></dict>
 <dict><key>scope</key><string>markup.changed</string><key>settings</key><dict>
-  <key>foreground</key><string>#b38600</string>
+  <key>foreground</key><string>#f3be7c</string>
 </dict></dict>
 </array></dict></plist>

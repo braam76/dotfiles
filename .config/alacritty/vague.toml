@@ -1,0 +1,42 @@
+# Generated from the shared JSON palette. Edit the template, not this file.
+[colors.primary]
+background = "#141415"
+foreground = "#cdcdcd"
+
+[colors.cursor]
+text = "#141415"
+cursor = "#d7d7d7"
+
+[colors.selection]
+background = "#333738"
+text = "#d7d7d7"
+
+[colors.normal]
+black = "#252530"
+red = "#d8647e"
+green = "#7fa563"
+yellow = "#f3be7c"
+blue = "#6e94b2"
+magenta = "#bb9dbd"
+cyan = "#aeaed1"
+white = "#cdcdcd"
+
+[colors.bright]
+black = "#606079"
+red = "#e08398"
+green = "#99b782"
+yellow = "#f5cb96"
+blue = "#8ba9c1"
+magenta = "#c9b1ca"
+cyan = "#bebeda"
+white = "#d7d7d7"
+
+[colors.dim]
+black = "#18181f"
+red = "#8e4253"
+green = "#536c41"
+yellow = "#a07d51"
+blue = "#486175"
+magenta = "#7b677c"
+cyan = "#727289"
+white = "#878787"

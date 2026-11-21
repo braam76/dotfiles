@@ -1,12 +1,12 @@
 ;;; init.el --- Personal Emacs configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; Elpaca manages packages; the local Solarized Osaka theme supplies colors.
+;; Elpaca manages packages; the local Vague theme supplies colors.
 
 ;;; Code:
 
 (add-to-list 'custom-theme-load-path (expand-file-name "themes/" user-emacs-directory))
-(load-theme 'solarized-osaka t)
+(load-theme 'vague t)
 (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 120)
 
 ;; Watch the source directory: atomic renders replace the symlink's referent.
@@ -15,11 +15,11 @@
 (when dotfiles-theme-watch
   (file-notify-rm-watch dotfiles-theme-watch))
 (let ((directory (file-name-directory
-                  (file-truename (expand-file-name "themes/solarized-osaka-theme.el"
+                  (file-truename (expand-file-name "themes/vague-theme.el"
                                                    user-emacs-directory)))))
   (setq dotfiles-theme-watch
         (file-notify-add-watch directory '(change)
-          (lambda (_event) (load-theme 'solarized-osaka t)))))
+          (lambda (_event) (load-theme 'vague t)))))
 
 ;; Upstream Elpaca installer. Downloads Elpaca on first startup.
 (defvar elpaca-installer-version 0.12)

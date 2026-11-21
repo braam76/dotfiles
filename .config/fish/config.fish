@@ -7,7 +7,7 @@ if status is-interactive
 
     # Refresh generated colors on the next prompt, without restarting the shell.
     function __dotfiles_theme_reload --on-event fish_prompt
-        set -l theme "$HOME/.config/fish/conf.d/solarized-osaka.fish"
+        set -l theme "$HOME/.config/fish/conf.d/vague.fish"
         set -l stamp (stat -c %y -- "$theme" 2>/dev/null)
         if test -n "$stamp"; and test "$stamp" != "$__dotfiles_theme_stamp"
             source "$theme"

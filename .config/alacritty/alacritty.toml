@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/solarized-osaka.toml"]
+import = ["~/.config/alacritty/vague.toml"]
 
 [font]
 size = 12
