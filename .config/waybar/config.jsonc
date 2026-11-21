@@ -1,113 +1,176 @@
-// Layout adapted from https://github.com/mogura1n/waybar (oishi-waybar).
-// Mango workspaces/window title; colors and font come from Stylix.
+// HANCORE V1.7, adapted for Mango and NixOS. See LICENSE.hancore.
 {
-    "layer": "top",
-    "position": "top",
-    "spacing": 5,
-    "modules-left": ["custom/launcher", "ext/workspaces", "cpu", "memory", "custom/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "custom/language", "wireplumber", "network", "backlight", "custom/platform-profile", "idle_inhibitor", "battery", "custom/power"],
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "position": "top",
+  "spacing": 0,
+  "height": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "modules-left": ["ext/workspaces", "custom/separator", "custom/windowpill"],
+  // Omarchy updates, pacman updates, Voxtype, and recording are not used here.
+  "modules-center": ["clock", "idle_inhibitor", "custom/notification-silencing-indicator"],
+  "modules-right": ["group/tray-expander", "group/right2", "group/right"],
 
-    "custom/launcher": {
-        "format": "",
-        "tooltip-format": "Application launcher",
-        "on-click": "fuzzel"
-    },
-    "ext/workspaces": {
-        "format": "{name}",
-        "on-click": "activate",
-        "sort-by-name": true
-    },
-    "custom/window": {
-        "exec": "python3 $HOME/.config/waybar/mango.py window",
-        "return-type": "json",
-        "restart-interval": 2,
-        "max-length": 32,
-        "escape": true,
-        "tooltip": false
-    },
-    "cpu": {
-        "interval": 2,
-        "format": "CPU {usage:>2}%",
-        "on-click": "alacritty -e btop"
-    },
-    "memory": {
-        "interval": 10,
-        "format": "MEM {used:0.1f}G",
-        "tooltip-format": "{used:0.1f} / {total:0.1f} GiB",
-        "on-click": "alacritty -e btop"
-    },
-    "tray": {
-        "icon-size": 15,
-        "spacing": 7
-    },
-    "custom/language": {
-        "exec": "python3 $HOME/.config/waybar/mango.py language",
-        "return-type": "json",
-        "restart-interval": 2
-    },
-    "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "󰖁",
-        "format-icons": ["", "󰕾"],
-        "max-volume": 100,
-        "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    },
-    "network": {
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤭",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-        "tooltip-format-ethernet": "{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "networkmanager_dmenu",
-        "on-click-right": "alacritty -e nmtui"
-    },
-    "backlight": {
-        "format": "{percent}% 󰃠",
-        "tooltip-format": "Brightness: {percent}%",
-        "on-scroll-up": "brightnessctl set +5%",
-        "on-scroll-down": "brightnessctl set 5%-"
-    },
-    "custom/platform-profile": {
-        "format": "{icon}",
-        "exec-if": "test -r /sys/firmware/acpi/platform_profile",
-        "exec": "sh $HOME/.config/waybar/platform_profile.sh",
-        "return-type": "json",
-        "interval": 5,
-        "format-icons": {
-            "quiet": "󰌪",
-            "balanced": "󰈐",
-            "performance": "",
-            "default": "?"
-        }
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {"activated": "󰅶", "deactivated": "󰾪"},
-        "tooltip-format-activated": "Keep awake: on",
-        "tooltip-format-deactivated": "Keep awake: off"
-    },
-    "clock": {
-        "format": "{:%H:%M}  ",
-        "format-alt": "{:%d.%m.%Y %H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
-    },
-    "battery": {
-        "interval": 30,
-        "states": {"warning": 30, "critical": 15},
-        "format": "{capacity}% {icon}",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-full": "󰁹 {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-    "custom/power": {
-        "format": "",
-        "tooltip-format": "Power menu",
-        "on-click": "python3 $HOME/.config/waybar/mango.py power"
+  "group/right2": {
+    "orientation": "inherit",
+    "modules": ["mpris"]
+  },
+  "group/right": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/separator", "backlight",
+      "custom/separator", "bluetooth",
+      "custom/separator", "network",
+      "custom/separator", "pulseaudio",
+      "custom/separator", "memory",
+      "custom/separator", "cpu",
+      "custom/separator", "battery"
+    ]
+  },
+  "ext/workspaces": {
+    "all-outputs": true,
+    "ignore-hidden": false,
+    "sort-by-name": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "mmsg dispatch viewtoright,0",
+    "on-scroll-down": "mmsg dispatch viewtoleft,0",
+    "format-icons": {
+      "1": "I", "2": "II", "3": "III", "4": "IV", "5": "V",
+      "6": "VI", "7": "VII", "8": "VIII", "9": "IX", "10": "X",
+      "overview": "󰕰"
     }
+  },
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  },
+  "custom/windowpill": {
+    "format": "{}",
+    "exec": "python3 \"$HOME/.config/waybar/mango.py\" window",
+    "return-type": "json",
+    "restart-interval": 1,
+    "align": 0,
+    "justify": "left",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "󱫖",
+    "tooltip-format-activated": "Idle inhibition on (click to disable)",
+    "tooltip-format-deactivated": "Idle inhibition off (click to enable)"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "python3 \"$HOME/.config/waybar/mango.py\" toggle-dnd",
+    "exec": "python3 \"$HOME/.config/waybar/mango.py\" dnd",
+    "interval": 3,
+    "return-type": "json"
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {usage:02}%",
+    "on-click": "python3 \"$HOME/.config/waybar/mango.py\" btop"
+  },
+  "memory": {
+    "interval": 2,
+    "format": "󰍛 {percentage:02}%",
+    "on-click": "python3 \"$HOME/.config/waybar/mango.py\" btop"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "format": {
+        "month": "<b>{}</b>",
+        "weekdays": "<span color='#aaaaaa'><b>{}</b></span>",
+        "today": "<span color='#ffffff'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {"on-click-right": "mode"}
+  },
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "networkmanager_dmenu",
+    "on-click-right": "alacritty -e nmtui"
+  },
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format-discharging": "{timeTo}",
+    "tooltip-format-charging": "{timeTo}",
+    "interval": 5,
+    "on-click": "python3 \"$HOME/.config/waybar/mango.py\" power",
+    "on-click-right": "python3 \"$HOME/.config/waybar/mango.py\" battery",
+    "states": {"warning": 20, "critical": 10}
+  },
+  "bluetooth": {
+    "format": "",
+    "format-no-controller": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "tooltip-format-no-controller": "Bluetooth unavailable: no controller found",
+    "tooltip-format-disabled": "Bluetooth is off",
+    "on-click": "PATH=\"$PATH:/run/current-system/sw/bin\"; if command -v blueman-manager >/dev/null; then exec blueman-manager; elif command -v bluetoothctl >/dev/null; then exec alacritty -e bluetoothctl; fi"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", ""]
+    }
+  },
+  "backlight": {
+    "rotate": 0,
+    "format": "{icon}",
+    "tooltip-format": "🌕 {percent}%",
+    "format-icons": ["󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl -c backlight set +5%",
+    "on-scroll-down": "brightnessctl -c backlight set 5%-"
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 11,
+    "spacing": 5
+  },
+  "mpris": {
+    "format": " {artist} - {title}",
+    "format-paused": "<span color='grey'>{status_icon}  {title}</span>",
+    "max-length": 45,
+    "player-icons": {"default": "⏸", "mpv": "🎵"},
+    "status-icons": {"paused": "󰝛"},
+    "ignored-players": ["firefox", "chromium", "brave"]
+  }
 }
