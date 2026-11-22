@@ -5,7 +5,7 @@ import = ["~/.config/alacritty/vague.toml"]
 size = 12
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]

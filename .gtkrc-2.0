@@ -1,4 +1,4 @@
-gtk-font-name = "JetBrainsMono Nerd Font 12"
+gtk-font-name = "Iosevka Nerd Font 12"
 
 # GTK2 cannot use GTK3 CSS; supply its palette using native RC styles.
 style "vague" {

@@ -6,6 +6,8 @@ vim.pack.add {
     "https://github.com/folke/lazydev.nvim",
 }
 
+local js_formatters = { "oxfmt", "prettierd", "prettier", stop_after_first = true }
+
 require("conform").setup {
     formatters_by_ft = {
         lua = { "stylua" },
@@ -13,7 +15,11 @@ require("conform").setup {
         python = { "isort", "black" },
         rust = { "rustfmt", lsp_format = "fallback" },
         zig = { "zigfmt" },
-        javascript = { "oxfmt", "prettierd", "prettier", stop_after_first = true },
+        javascript = js_formatters,
+        javascriptreact = js_formatters,
+        typescript = js_formatters,
+        typescriptreact = js_formatters,
+        vue = { "prettierd", "prettier", stop_after_first = true },
     },
     format_on_save = { timeout_ms = 1000, lsp_format = "fallback" },
 }
@@ -98,6 +104,47 @@ vim.lsp.config("devenv", {
         end
     end,
 })
+
+-- Use servers supplied by the shell/project, never install them from Neovim.
+if vim.fn.executable "vtsls" == 1 then
+    local vue_cmd = vim.fn.exepath "vue-language-server"
+    if vue_cmd ~= "" then
+        local vue_package = vim.env.VUE_LANGUAGE_SERVER_PATH
+        if not vue_package or vue_package == "" then
+            -- npm normally symlinks the executable into PATH from the package's bin/ directory.
+            local executable = vim.fn.resolve(vue_cmd)
+            local package_root = vim.fs.dirname(vim.fs.dirname(executable))
+            if vim.endswith(package_root, "/@vue/language-server") then
+                vue_package = package_root
+            else
+                -- Project-local package managers can use a shim in node_modules/.bin instead.
+                vue_package = vim.fs.joinpath(vim.fs.dirname(vim.fs.dirname(vue_cmd)), "@vue/language-server")
+            end
+        end
+        if vim.uv.fs_stat(vim.fs.joinpath(vue_package, "package.json")) then
+            vim.lsp.config("vtsls", {
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+                settings = {
+                    vtsls = {
+                        tsserver = {
+                            globalPlugins = {
+                                {
+                                    name = "@vue/typescript-plugin",
+                                    location = vue_package,
+                                    languages = { "vue" },
+                                    configNamespace = "typescript",
+                                },
+                            },
+                        },
+                    },
+                },
+            })
+            -- nvim-lspconfig already forwards Vue's TypeScript requests to vtsls.
+            vim.lsp.enable "vue_ls"
+        end
+    end
+    vim.lsp.enable "vtsls"
+end
 
 vim.lsp.enable {
     "gopls",

@@ -7,7 +7,7 @@
 
 (add-to-list 'custom-theme-load-path (expand-file-name "themes/" user-emacs-directory))
 (load-theme 'vague t)
-(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 120)
+(set-face-attribute 'default nil :family "Iosevka Nerd Font" :height 120)
 
 ;; Watch the source directory: atomic renders replace the symlink's referent.
 (require 'filenotify)

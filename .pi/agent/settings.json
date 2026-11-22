@@ -6,5 +6,6 @@
   "cacheWarming": "streaming",
   "tuiMode": "fullscreen",
   "fullscreenScrollbar": "auto",
-  "theme": "system"
+  "theme": "system",
+  "packages": ["npm:pi-hashline-edit@0.8.3"]
 }

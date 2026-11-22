@@ -105,11 +105,11 @@ ForegroundVisited=126,152,232
 [General]
 ColorScheme=Vague
 Name=Vague
-fixed=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
-font=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
-menuFont=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
-smallestReadableFont=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
-toolBarFont=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
+fixed=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
+font=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
+menuFont=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
+smallestReadableFont=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
+toolBarFont=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
@@ -119,7 +119,7 @@ frameContrast=0.2
 [WM]
 activeBackground=20,20,21
 activeBlend=110,148,178
-activeFont=JetBrainsMono Nerd Font,12,-1,5,50,0,0,0,0,0
+activeFont=Iosevka Nerd Font,12,-1,5,50,0,0,0,0,0
 activeForeground=215,215,215
 inactiveBackground=20,20,21
 inactiveBlend=37,37,48
