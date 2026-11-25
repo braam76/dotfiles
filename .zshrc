@@ -38,7 +38,7 @@ alias edit='sudo -e'
 alias snr-switch='sudo nixos-rebuild switch --flake ~/dotfiles --impure'
 alias snr-update='sudo nixos-rebuild switch --flake ~/dotfiles --impure --update'
 
-source /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 source ~/.config/zsh/theme.zsh
 

@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.5.0",
+  "lastChangelogVersion": "1.6.0",
   "deviceId": "1a8149e3-1056-426d-825f-de80a58d65db",
   "defaultProvider": "openai",
   "defaultModel": "gpt-6.2-sol",
@@ -7,5 +7,7 @@
   "tuiMode": "fullscreen",
   "fullscreenScrollbar": "auto",
   "theme": "system",
-  "packages": ["npm:pi-hashline-edit@0.8.3"]
+  "packages": [
+    "npm:pi-hashline-edit@0.8.3"
+  ]
 }
